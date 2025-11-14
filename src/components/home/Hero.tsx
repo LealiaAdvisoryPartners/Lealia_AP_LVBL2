@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import heroBg from "@/assets/hero-bg.jpg";
+import logo from "@/assets/logo.png";
 
 const Hero = () => {
   return (
@@ -21,9 +22,11 @@ const Hero = () => {
         transition={{ duration: 0.8 }}
         className="relative z-10 text-center px-4"
       >
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-primary-foreground mb-6">
-          Lealia Advisory Partners
-        </h1>
+        <img 
+          src={logo} 
+          alt="Lealia Advisory Partners" 
+          className="w-full max-w-2xl mx-auto mb-6"
+        />
         <p className="text-xl md:text-2xl text-primary-foreground/90 font-body max-w-3xl mx-auto">
           Strategic Advisory for Transformative Outcomes
         </p>
