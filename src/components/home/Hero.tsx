@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import heroBg from "@/assets/hero_try.png";
 import logo from "@/assets/logo.png";
 
+
 const Hero = () => {
   return (
     <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
