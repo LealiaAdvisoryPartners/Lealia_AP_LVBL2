@@ -5,10 +5,11 @@ import logo from "@/assets/logo.png";
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
+      {/* Background Image with Gradient to Section Bg Color */}
       <div className="absolute inset-0 z-0">
         <img src={heroBg} alt="Lealia Advisory Partners" className="w-full h-full" style={{ objectFit: "fill" }} />
-        <div className="absolute inset-0"></div>
+        {/* Bottom Fade Gradient */}
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-b from-transparent to-background"></div>
       </div>
 
       {/* Content */}
