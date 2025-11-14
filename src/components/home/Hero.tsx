@@ -2,18 +2,13 @@ import { motion } from "framer-motion";
 import heroBg from "@/assets/hero_try.png";
 import logo from "@/assets/logo.png";
 
-
 const Hero = () => {
   return (
     <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img
-          src={heroBg}
-          alt="Lealia Advisory Partners"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-primary/80"></div>
+        <img src={heroBg} alt="Lealia Advisory Partners" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-primary/20"></div>
       </div>
 
       {/* Content */}
@@ -23,11 +18,7 @@ const Hero = () => {
         transition={{ duration: 0.8 }}
         className="relative z-10 text-center px-4"
       >
-        <img 
-          src={logo} 
-          alt="Lealia Advisory Partners" 
-          className="w-full max-w-2xl mx-auto mb-6"
-        />
+        <img src={logo} alt="Lealia Advisory Partners" className="w-full max-w-2xl mx-auto mb-6" />
         <p className="text-xl md:text-2xl text-primary-foreground/90 font-body max-w-3xl mx-auto">
           Strategic Advisory for Transformative Outcomes
         </p>
