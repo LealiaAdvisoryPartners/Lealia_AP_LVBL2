@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Search, Target, FileText, TrendingUp, CheckCircle } from "lucide-react";
 
@@ -53,9 +51,7 @@ const Services = () => {
   };
 
   return (
-    <div className="min-h-screen">
-      <Navigation />
-      <div className="pt-16 flex">
+    <div className="flex">
         {/* Fixed Sidebar Navigation */}
         <aside className="hidden lg:block w-64 fixed left-0 top-16 h-[calc(100vh-4rem)] bg-secondary border-r border-border p-6">
           <nav className="space-y-2">
@@ -332,8 +328,6 @@ const Services = () => {
           </section>
         </main>
       </div>
-      <Footer />
-    </div>
   );
 };
 
