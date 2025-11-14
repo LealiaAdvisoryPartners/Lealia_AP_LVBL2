@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -7,11 +8,13 @@ const Footer = () => {
     <footer className="bg-primary text-primary-foreground">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-          {/* Company Name */}
+          {/* Company Logo */}
           <div>
-            <h3 className="text-xl font-heading font-semibold mb-2">
-              Lealia Advisory Partners
-            </h3>
+            <img 
+              src={logo} 
+              alt="Lealia Advisory Partners" 
+              className="w-64 mb-2"
+            />
             <p className="text-primary-foreground/80 text-sm">
               Strategic Advisory for Transformative Outcomes
             </p>
