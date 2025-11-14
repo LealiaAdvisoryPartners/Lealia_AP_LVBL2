@@ -4,7 +4,7 @@ import logo from "@/assets/logo.png";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen overflow-hidden">
       {/* Background Image with Gradient to Section Bg Color */}
       <div className="absolute inset-0 z-0">
         <img src={heroBg} alt="Lealia Advisory Partners" className="w-full h-full" style={{ objectFit: "fill" }} />
@@ -12,12 +12,12 @@ const Hero = () => {
         <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-b from-transparent to-background"></div>
       </div>
 
-      {/* Content */}
+      {/* Centered Content */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="relative z-10 text-center px-4"
+        className="absolute top-1/2 left-1/2 z-10 text-center px-4 transform -translate-x-1/2 -translate-y-1/2"
       >
         <img src={logo} alt="Lealia Advisory Partners" className="w-full max-w-2xl mx-auto mb-6" />
         <p className="text-xl md:text-2xl text-primary-foreground/90 font-body max-w-3xl mx-auto">
