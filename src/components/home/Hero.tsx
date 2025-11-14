@@ -7,7 +7,7 @@ const Hero = () => {
     <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img src={heroBg} alt="Lealia Advisory Partners" className="w-full h-full object-cover" />
+        <img src={heroBg} alt="Lealia Advisory Partners" className="w-full h-full object-contain" />
         <div className="absolute inset-0"></div>
       </div>
 
