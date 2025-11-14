@@ -1,6 +1,4 @@
 import { motion } from "framer-motion";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
 import {
   Accordion,
   AccordionContent,
@@ -34,9 +32,7 @@ const whyUsItems = [
 
 const About = () => {
   return (
-    <div className="min-h-screen">
-      <Navigation />
-      <main className="pt-16">
+    <>
         {/* Introduction Section */}
         <section className="section-container">
           <motion.div
@@ -142,9 +138,7 @@ const About = () => {
             </div>
           </motion.div>
         </section>
-      </main>
-      <Footer />
-    </div>
+    </>
   );
 };
 
