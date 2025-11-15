@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Linkedin } from "lucide-react";
+import { Mail, Linkedin, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import teamMember1 from "@/assets/team-member-1.jpg";
 import teamMember2 from "@/assets/team-member-2.jpg";
@@ -82,6 +82,16 @@ const TeamPreview = () => {
             </div>
           </motion.div>
         ))}
+      </div>
+
+      {/* Meet Our Team Link at Bottom */}
+      <div className="mt-12 flex justify-center">
+        <Link
+          to="/team"
+          className="inline-flex items-center gap-2 text-primary font-semibold text-lg hover:text-primary/70 transition-colors"
+        >
+          Meet Our Team <ArrowRight className="w-5 h-5" />
+        </Link>
       </div>
     </section>
   );
