@@ -1,13 +1,3 @@
-import { useLanguage } from "@/contexts/LanguageContext";
-import {
-  DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-  DropdownMenuItem,
-} from "@/components/ui/dropdown-menu";
-import { ChevronDown } from "lucide-react";
-import { Button } from "@/components/ui/button";
-
 const LanguageToggle = () => {
   const { language, setLanguage } = useLanguage();
 
@@ -22,7 +12,11 @@ const LanguageToggle = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" className="flex items-center gap-1 font-medium">
+        {/* Change 'variant' and add matching className */}
+        <Button
+          variant="default" // Use 'default' or your nav button variant here
+          className="flex items-center gap-1 font-medium px-4 py-2 rounded-md" // Match nav button styles: padding, font, etc.
+        >
           {current?.code.toUpperCase()}
           <ChevronDown className="w-4 h-4 opacity-70" />
         </Button>
@@ -42,5 +36,3 @@ const LanguageToggle = () => {
     </DropdownMenu>
   );
 };
-
-export default LanguageToggle;
