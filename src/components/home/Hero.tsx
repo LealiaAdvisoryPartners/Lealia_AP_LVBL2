@@ -19,7 +19,7 @@ const Hero = () => {
         transition={{ duration: 0.8 }}
         className="relative z-10 text-center px-4"
       >
-        <img src={logo} alt="Lealia Advisory Partners" className="w-full max-w-2xl mx-auto mb-0" />
+        <img src={logo} alt="Lealia Advisory Partners" className="w-full max-w-2xl mx-auto mb-6" />
         <p className="text-xl md:text-2xl text-primary-foreground/90 font-body max-w-3xl mx-auto">
           Strategic Advisory for Transformative Outcomes
         </p>
