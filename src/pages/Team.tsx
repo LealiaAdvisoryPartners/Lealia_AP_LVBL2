@@ -40,107 +40,104 @@ const Team = () => {
 
   return (
     <>
-        {/* Header Section */}
-        <section className="section-container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-6">
-              Meet Our Team
-            </h1>
-            <p className="text-lg text-muted-foreground max-w-4xl font-body leading-relaxed">
-              Our team combines deep industry expertise, analytical rigor, and a genuine commitment
-              to client success. We bring decades of experience in M&A advisory, strategy
-              consulting, and operational improvement to every engagement.
-            </p>
-          </motion.div>
-        </section>
+      {/* Header Section */}
+      <section className="section-container">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-6">
+            Meet Our Team
+          </h1>
+          <p className="text-lg text-muted-foreground max-w-4xl font-body leading-relaxed">
+            Our team combines deep industry expertise, analytical rigor, and a genuine commitment
+            to client success. We bring decades of experience in M&A advisory, strategy
+            consulting, and operational improvement to every engagement.
+          </p>
+        </motion.div>
+      </section>
 
-        {/* Team Members */}
-        {teamMembers.map((member, index) => (
-          <section
-            key={member.name}
-            className={`section-container ${index % 2 === 0 ? "bg-background" : "bg-secondary"}`}
-          >
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="grid grid-cols-1 lg:grid-cols-3 gap-12"
-            >
-              {/* Profile Image and Contact */}
-              <div className="space-y-6">
-                <div className="relative overflow-hidden rounded-lg shadow-[var(--shadow-elegant)]">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full aspect-square object-cover"
-                  />
-                </div>
-                <div className="flex gap-4">
-                  <a
-                    href={`mailto:${member.email}`}
-                    className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
-                  >
-                    <Mail className="w-5 h-5" />
-                    <span className="font-body">{member.email}</span>
-                  </a>
-                  <a
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
-                  >
-                    <Linkedin className="w-5 h-5" />
-                  </a>
-                </div>
-              </div>
-
-              {/* Bio */}
-              <div className="lg:col-span-2 space-y-6">
-                <div>
-                  <h2 className="text-3xl font-heading font-bold text-primary mb-2">
-                    {member.name}
-                  </h2>
-                  <p className="text-lg text-muted-foreground italic font-body">{member.role}</p>
-                </div>
-                <div className="space-y-4 font-body text-muted-foreground leading-relaxed">
-                  {member.bio.map((paragraph, idx) => (
-                    <p key={idx}>{paragraph}</p>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          </section>
-        ))}
-
-        {/* CTA Section */}
-        <section className="section-container bg-primary text-primary-foreground">
+      {/* Team Members */}
+      {teamMembers.map((member) => (
+        <section key={member.name} className="section-container">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center"
+            className="grid grid-cols-1 lg:grid-cols-3 gap-12"
           >
-            <h2 className="text-3xl md:text-4xl font-heading font-semibold mb-6">
-              Let's Work Together
-            </h2>
-            <p className="text-lg text-primary-foreground/90 mb-8 max-w-2xl mx-auto font-body">
-              We'd love to hear from you and discuss how we can help your business achieve its
-              strategic goals.
-            </p>
-            <Button
-              onClick={scrollToContact}
-              className="bg-accent text-accent-foreground hover:bg-accent/90 px-8 py-6 text-lg"
-            >
-              Get In Touch
-            </Button>
+            {/* Profile Image and Contact */}
+            <div className="space-y-6">
+              <div className="relative overflow-hidden rounded-lg shadow-[var(--shadow-elegant)]">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full aspect-square object-cover"
+                />
+              </div>
+              <div className="flex gap-4">
+                <a
+                  href={`mailto:${member.email}`}
+                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
+                >
+                  <Mail className="w-5 h-5" />
+                  <span className="font-body">{member.email}</span>
+                </a>
+                <a
+                  href={member.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
+                >
+                  <Linkedin className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
+
+            {/* Bio */}
+            <div className="lg:col-span-2 space-y-6">
+              <div>
+                <h2 className="text-3xl font-heading font-bold text-primary mb-2">
+                  {member.name}
+                </h2>
+                <p className="text-lg text-muted-foreground italic font-body">{member.role}</p>
+              </div>
+              <div className="space-y-4 font-body text-muted-foreground leading-relaxed">
+                {member.bio.map((paragraph, idx) => (
+                  <p key={idx}>{paragraph}</p>
+                ))}
+              </div>
+            </div>
           </motion.div>
         </section>
+      ))}
+
+      {/* CTA Section */}
+      <section className="section-container bg-primary text-primary-foreground">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center"
+        >
+          <h2 className="text-3xl md:text-4xl font-heading font-semibold mb-6">
+            Let's Work Together
+          </h2>
+          <p className="text-lg text-primary-foreground/90 mb-8 max-w-2xl mx-auto font-body">
+            We'd love to hear from you and discuss how we can help your business achieve its
+            strategic goals.
+          </p>
+          <Button
+            onClick={scrollToContact}
+            className="bg-accent text-accent-foreground hover:bg-accent/90 px-8 py-6 text-lg"
+          >
+            Get In Touch
+          </Button>
+        </motion.div>
+      </section>
     </>
   );
 };
