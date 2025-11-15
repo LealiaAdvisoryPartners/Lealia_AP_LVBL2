@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 import {
   ArrowRight,
   Search,
@@ -15,13 +16,14 @@ import {
 const Services = () => {
   const [activeSection, setActiveSection] = useState("overview");
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const { t } = useLanguage();
 
   const sections = [
-    { id: "overview", label: "Overview" },
-    { id: "buy-side", label: "M&A Buy-Side" },
-    { id: "sell-side", label: "M&A Sell-Side" },
-    { id: "performance", label: "Performance Improvement" },
-    { id: "modeling", label: "Modeling" },
+    { id: "overview", label: t("servicespage.overview") },
+    { id: "buy-side", label: t("servicespage.buyside") },
+    { id: "sell-side", label: t("servicespage.sellside") },
+    { id: "performance", label: t("servicespage.performance") },
+    { id: "modeling", label: t("servicespage.modeling") },
   ];
 
   useEffect(() => {
@@ -82,7 +84,7 @@ const Services = () => {
         <div className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50">
           <div className="absolute left-0 top-0 w-64 h-full bg-background border-r border-border p-6 shadow-xl">
             <div className="flex justify-between items-center mb-6">
-              <h3 className="font-heading text-lg font-semibold">Our Services</h3>
+              <h3 className="font-heading text-lg font-semibold">{t("servicespage.nav")}</h3>
               <button
                 onClick={() => setMobileNavOpen(false)}
                 aria-label="Close navigation"
@@ -119,7 +121,7 @@ const Services = () => {
           transition={{ duration: 0.4 }}
           className="mb-6"
         >
-          <h2 className="font-heading text-xl font-bold text-primary">Our Services</h2>
+          <h2 className="font-heading text-xl font-bold text-primary">{t("servicespage.nav")}</h2>
         </motion.div>
 
         <motion.nav
@@ -161,25 +163,19 @@ const Services = () => {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-6">
-              Our Services
+              {t("servicespage.overview.title")}
             </h1>
 
             <p className="text-lg text-muted-foreground max-w-4xl font-body leading-relaxed mb-4">
-              At Lealia Advisory Partners, we offer comprehensive advisory services designed to
-              help businesses navigate complex transactions, optimize performance, and achieve
-              strategic growth objectives.
+              {t("servicespage.overview.p1")}
             </p>
 
             <p className="text-lg text-muted-foreground max-w-4xl font-body leading-relaxed mb-4">
-              Our expertise spans the full spectrum of M&A advisory, from buy-side and sell-side
-              transactions to performance improvement and sophisticated financial modeling. We
-              combine deep industry knowledge with rigorous analytical capabilities to deliver
-              exceptional outcomes.
+              {t("servicespage.overview.p2")}
             </p>
 
             <p className="text-lg text-muted-foreground max-w-4xl font-body leading-relaxed">
-              Each engagement is tailored to your unique needs, ensuring that our strategies align
-              with your business objectives and create lasting value.
+              {t("servicespage.overview.p3")}
             </p>
           </motion.div>
         </section>
@@ -192,23 +188,20 @@ const Services = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="section-title mb-6">M&A Buy-Side Advisory</h2>
+            <h2 className="section-title mb-6">{t("servicespage.buyside.title")}</h2>
 
             <p className="text-lg text-muted-foreground max-w-4xl font-body leading-relaxed mb-12">
-              Our buy-side advisory services help clients identify, evaluate, and successfully
-              execute strategic acquisitions. We guide you through every stage of the process,
-              from defining your acquisition strategy to closing the transaction and supporting
-              post-merger integration.
+              {t("servicespage.buyside.desc")}
             </p>
 
             <div className="bg-card rounded-lg p-8 shadow-[var(--shadow-elegant)]">
               <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                 {[
-                  { icon: Target, label: "Strategy Definition" },
-                  { icon: Search, label: "Target Identification" },
-                  { icon: FileText, label: "Due Diligence" },
-                  { icon: TrendingUp, label: "Valuation" },
-                  { icon: CheckCircle, label: "Negotiation & Closing" },
+                  { icon: Target, label: t("servicespage.buyside.step1") },
+                  { icon: Search, label: t("servicespage.buyside.step2") },
+                  { icon: FileText, label: t("servicespage.buyside.step3") },
+                  { icon: TrendingUp, label: t("servicespage.buyside.step4") },
+                  { icon: CheckCircle, label: t("servicespage.buyside.step5") },
                 ].map((step, index, arr) => (
                   <div key={step.label} className="flex items-center gap-6">
                     <div className="flex flex-col items-center text-center min-w-[140px]">
@@ -235,23 +228,20 @@ const Services = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="section-title mb-6">M&A Sell-Side Advisory</h2>
+            <h2 className="section-title mb-6">{t("servicespage.sellside.title")}</h2>
 
             <p className="text-lg text-muted-foreground max-w-4xl font-body leading-relaxed mb-12">
-              Our sell-side advisory services maximize value for business owners looking to exit
-              or divest assets. We manage the entire sale process, from preparation and valuation
-              to marketing, negotiation, and transaction completion, ensuring optimal outcomes for
-              our clients.
+              {t("servicespage.sellside.desc")}
             </p>
 
             <div className="bg-card rounded-lg p-8 shadow-[var(--shadow-elegant)]">
               <div className="flex flex-col md:flex-row items-center justify-between gap-6">
                 {[
-                  { icon: FileText, label: "Preparation" },
-                  { icon: TrendingUp, label: "Valuation" },
-                  { icon: Target, label: "Marketing" },
-                  { icon: Search, label: "Buyer Selection" },
-                  { icon: CheckCircle, label: "Transaction Completion" },
+                  { icon: FileText, label: t("servicespage.sellside.step1") },
+                  { icon: TrendingUp, label: t("servicespage.sellside.step2") },
+                  { icon: Target, label: t("servicespage.sellside.step3") },
+                  { icon: Search, label: t("servicespage.sellside.step4") },
+                  { icon: CheckCircle, label: t("servicespage.sellside.step5") },
                 ].map((step, index, arr) => (
                   <div key={step.label} className="flex items-center gap-6">
                     <div className="flex flex-col items-center text-center min-w-[140px]">
@@ -278,22 +268,19 @@ const Services = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="section-title mb-6">Performance Improvement</h2>
+            <h2 className="section-title mb-6">{t("servicespage.performance.title")}</h2>
 
             <p className="text-lg text-muted-foreground max-w-4xl font-body leading-relaxed mb-12">
-              Our performance improvement services help businesses identify and capture operational
-              efficiencies, enhance profitability, and drive sustainable growth. We work
-              collaboratively with your team to develop and implement strategies that deliver
-              measurable results.
+              {t("servicespage.performance.desc")}
             </p>
 
             <div className="bg-card rounded-lg p-8 shadow-[var(--shadow-elegant)]">
               <div className="flex flex-col gap-6 max-w-md mx-auto">
                 {[
-                  { label: "Assessment", desc: "Comprehensive analysis of current state" },
-                  { label: "Strategy Development", desc: "Tailored improvement roadmap" },
-                  { label: "Implementation", desc: "Execute initiatives with your team" },
-                  { label: "Monitoring & Optimization", desc: "Track results and refine approach" },
+                  { label: t("servicespage.performance.step1"), desc: t("servicespage.performance.step1.desc") },
+                  { label: t("servicespage.performance.step2"), desc: t("servicespage.performance.step2.desc") },
+                  { label: t("servicespage.performance.step3"), desc: t("servicespage.performance.step3.desc") },
+                  { label: t("servicespage.performance.step4"), desc: t("servicespage.performance.step4.desc") },
                 ].map((step, index, arr) => (
                   <div key={step.label}>
                     <div className="flex items-start gap-4">
@@ -324,30 +311,28 @@ const Services = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="section-title mb-6">Financial Modeling</h2>
+            <h2 className="section-title mb-6">{t("servicespage.modeling.title")}</h2>
 
             <p className="text-lg text-muted-foreground max-w-4xl font-body leading-relaxed mb-12">
-              Our financial modeling expertise provides clients with sophisticated analytical tools
-              to support strategic decision-making. We develop custom models tailored to your
-              specific needs, ensuring accuracy, flexibility, and clarity.
+              {t("servicespage.modeling.desc")}
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
                 {
-                  title: "Valuation Models",
+                  title: t("servicespage.modeling.item1"),
                   desc: "DCF, comparable company analysis, precedent transactions",
                 },
                 {
-                  title: "Financial Projections",
+                  title: t("servicespage.modeling.item2"),
                   desc: "Detailed forecasts of revenue, expenses, and cash flows",
                 },
                 {
-                  title: "Scenario Analysis",
+                  title: t("servicespage.modeling.item3"),
                   desc: "Stress testing and sensitivity analysis for key assumptions",
                 },
                 {
-                  title: "Investment Analysis",
+                  title: t("servicespage.modeling.item4"),
                   desc: "ROI, IRR, and payback period calculations",
                 },
               ].map((type, index) => (
@@ -377,7 +362,7 @@ const Services = () => {
             className="text-center"
           >
             <h2 className="text-3xl md:text-4xl font-heading font-semibold mb-6">
-              Ready to Start a Conversation?
+              {t("servicespage.cta")}
             </h2>
             <p className="text-lg text-muted-foreground max-w-4xl font-body leading-relaxed mb-12 mx-auto text-center">
               Let's discuss how we can help you achieve your strategic objectives and create lasting
@@ -387,7 +372,7 @@ const Services = () => {
               onClick={scrollToContact}
               className="bg-accent text-accent-foreground hover:bg-accent/90 px-8 py-6 text-lg"
             >
-              Start a Conversation
+              {t("nav.contact")}
             </Button>
           </motion.div>
         </section>

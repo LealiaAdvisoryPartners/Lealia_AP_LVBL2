@@ -141,7 +141,7 @@ const Team = () => {
           transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-heading font-semibold mb-6">Let's Work Together</h2>
+          <h2 className="text-3xl md:text-4xl font-heading font-semibold mb-6">{t("teampage.cta")}</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-body leading-relaxed mb-8">
             We'd love to hear from you and discuss how we can help your business achieve its strategic goals.
           </p>
@@ -149,7 +149,7 @@ const Team = () => {
             onClick={() => (window.location.href = "/#contact")}
             className="bg-accent text-accent-foreground hover:bg-accent/90 px-8 py-6 text-lg"
           >
-            Get In Touch
+            {t("nav.contact")}
           </Button>
         </motion.div>
       </section>
