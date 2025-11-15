@@ -7,7 +7,12 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-start justify-center pt-48 overflow-hidden">
       {/* Background Image with Gradient to Section Bg Color */}
       <div className="absolute inset-0 z-0">
-        <img src={heroBg} alt="Lealia Advisory Partners" className="w-full h-full object-cover" style={{ objectPosition: "50% 65%" }}  />
+        <img
+          src={heroBg}
+          alt="Lealia Advisory Partners"
+          className="w-full h-full object-cover"
+          style={{ objectPosition: "50% 65%" }}
+        />
         {/* Bottom Fade Gradient */}
         <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-b from-transparent to-background"></div>
       </div>
@@ -19,8 +24,16 @@ const Hero = () => {
         transition={{ duration: 0.8 }}
         className="relative z-10 text-center px-4 -translate-y-50"
       >
-        <img src={logo} alt="Lealia Advisory Partners" className="w-full max-w-2xl mx-auto mb-6" />
-        <p className="text-xl md:text-2xl text-gray-400 font-body max-w-3xl mx-auto">
+        <img
+          src={logo}
+          alt="Lealia Advisory Partners"
+          className="mx-auto mb-6"
+          style={{ width: "clamp(150px, 50vw, 900px)", height: "auto" }}
+        />
+        <p
+          className="text-gray-400 font-body max-w-3xl mx-auto"
+          style={{ fontSize: "clamp(1rem, 2.5vw, 1.5rem)" }}
+        >
           Strategic Advisory for Transformative Outcomes
         </p>
       </motion.div>
