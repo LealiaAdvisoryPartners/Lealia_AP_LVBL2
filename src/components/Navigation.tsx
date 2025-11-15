@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import logoHeader from "@/assets/Logo_text_biggerfont_samesize_2.png";
 
@@ -20,10 +21,6 @@ const Navigation = () => {
   const scrollToContact = () => {
     window.location.href = "/#contact";
   };
-
-  // Regular color button with border matching text-foreground
-  const regularButtonClasses =
-    "font-body font-medium border border-border text-foreground px-4 py-1.5 rounded-md transition-colors hover:bg-secondary hover:text-foreground focus:outline-none focus:ring-2 focus:ring-border focus:ring-offset-2";
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-sm">
@@ -52,10 +49,17 @@ const Navigation = () => {
               </Link>
             ))}
 
-            {/* Get in Touch button with regular color and border */}
-            <button onClick={scrollToContact} className={regularButtonClasses}>
-              Contact Us
-            </button>
+            {/* Contact Us button styled like btn-gold */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className=""
+            >
+              <Button onClick={scrollToContact} className="btn-gold">
+                Contact Us
+              </Button>
+            </motion.div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -78,23 +82,32 @@ const Navigation = () => {
                 to={link.path}
                 onClick={() => setIsOpen(false)}
                 className={`block px-4 py-2 font-body font-medium transition-colors hover:bg-secondary rounded-md ${
-                  isActive(link.path) ? "text-accent bg-secondary" : "text-foreground"
+                  isActive(link.path)
+                    ? "text-accent bg-secondary"
+                    : "text-foreground"
                 }`}
               >
                 {link.name}
               </Link>
             ))}
 
-            {/* Mobile Get in Touch button with regular color and border */}
-            <button
-              onClick={() => {
-                setIsOpen(false);
-                scrollToContact();
-              }}
-              className={`${regularButtonClasses} block w-full text-center`}
+            {/* Mobile Contact Us button styled like btn-gold */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className=""
             >
-              Contact Us
-            </button>
+              <Button
+                onClick={() => {
+                  setIsOpen(false);
+                  scrollToContact();
+                }}
+                className="btn-gold w-full text-center"
+              >
+                Contact Us
+              </Button>
+            </motion.div>
           </div>
         )}
       </div>
