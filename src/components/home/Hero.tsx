@@ -6,13 +6,13 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-start justify-center pt-48 overflow-hidden">
       {/* Background Image with Gradient to Section Bg Color */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src={heroBg}
-          alt="Lealia Advisory Partners"
-          className="w-full h-full object-cover"
-          style={{ objectPosition: "50% 65%" }}
-        />
+      <div
+        className="absolute inset-0 z-0 bg-cover bg-center"
+        style={{ 
+          backgroundImage: `url(${heroBg})`,
+          backgroundPosition: "50% 65%",
+        }}
+      >
         {/* Bottom Fade Gradient */}
         <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-b from-transparent to-background"></div>
       </div>
