@@ -17,15 +17,23 @@ const Navigation = () => {
 
   const isActive = (path: string) => location.pathname === path;
 
+  const scrollToContact = () => {
+    window.location.href = "/#contact";
+  };
+
+  // Regular color button with border matching text-foreground
+  const regularButtonClasses =
+    "font-body font-medium border border-border text-foreground px-4 py-1.5 rounded-md transition-colors hover:bg-secondary hover:text-foreground focus:outline-none focus:ring-2 focus:ring-border focus:ring-offset-2";
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img 
-              src={logoHeader} 
-              alt="Lealia Advisory Partners" 
+            <img
+              src={logoHeader}
+              alt="Lealia Advisory Partners"
               className="h-8 w-auto"
             />
           </Link>
@@ -43,6 +51,11 @@ const Navigation = () => {
                 {link.name}
               </Link>
             ))}
+
+            {/* Get in Touch button with regular color and border */}
+            <button onClick={scrollToContact} className={regularButtonClasses}>
+              Contact Us
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -71,6 +84,17 @@ const Navigation = () => {
                 {link.name}
               </Link>
             ))}
+
+            {/* Mobile Get in Touch button with regular color and border */}
+            <button
+              onClick={() => {
+                setIsOpen(false);
+                scrollToContact();
+              }}
+              className={`${regularButtonClasses} block w-full text-center`}
+            >
+              Contact Us
+            </button>
           </div>
         )}
       </div>
