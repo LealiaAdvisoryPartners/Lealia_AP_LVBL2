@@ -14,16 +14,19 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-
-const formSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Please enter a valid email address"),
-  company: z.string().optional(),
-  message: z.string().min(10, "Message must be at least 10 characters"),
-});
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const ContactForm = () => {
   const { toast } = useToast();
+  const { t } = useLanguage();
+  
+  const formSchema = z.object({
+    name: z.string().min(2, t("contact.name.error")),
+    email: z.string().email(t("contact.email.error")),
+    company: z.string().optional(),
+    message: z.string().min(10, t("contact.message.error")),
+  });
+  
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -37,8 +40,8 @@ const ContactForm = () => {
   const onSubmit = (values: z.infer<typeof formSchema>) => {
     console.log(values);
     toast({
-      title: "Message Sent!",
-      description: "Thank you for reaching out. We'll be in touch soon.",
+      title: t("contact.success.title"),
+      description: t("contact.success.desc"),
     });
     form.reset();
   };
@@ -53,7 +56,7 @@ const ContactForm = () => {
         className="max-w-2xl mx-auto"
       >
         <div className="text-center mb-12">
-          <h2 className="section-title">Get In Touch</h2>
+          <h2 className="section-title">{t("contact.title")}</h2>
         </div>
 
         <div className="card-elegant p-8">
@@ -64,9 +67,9 @@ const ContactForm = () => {
                 name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Name *</FormLabel>
+                    <FormLabel>{t("contact.name")} *</FormLabel>
                     <FormControl>
-                      <Input placeholder="Your name" {...field} />
+                      <Input placeholder={t("contact.name.placeholder")} {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -77,9 +80,9 @@ const ContactForm = () => {
                 name="email"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Email *</FormLabel>
+                    <FormLabel>{t("contact.email")} *</FormLabel>
                     <FormControl>
-                      <Input placeholder="your.email@company.com" {...field} />
+                      <Input placeholder={t("contact.email.placeholder")} {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -90,9 +93,9 @@ const ContactForm = () => {
                 name="company"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Company</FormLabel>
+                    <FormLabel>{t("contact.company")}</FormLabel>
                     <FormControl>
-                      <Input placeholder="Your company name" {...field} />
+                      <Input placeholder={t("contact.company.placeholder")} {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -103,10 +106,10 @@ const ContactForm = () => {
                 name="message"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Message *</FormLabel>
+                    <FormLabel>{t("contact.message")} *</FormLabel>
                     <FormControl>
                       <Textarea
-                        placeholder="Tell us about your needs..."
+                        placeholder={t("contact.message.placeholder")}
                         className="min-h-[120px]"
                         {...field}
                       />
@@ -116,7 +119,7 @@ const ContactForm = () => {
                 )}
               />
               <Button type="submit" className="btn-gold w-full">
-                Send Message
+                {t("contact.submit")}
               </Button>
             </form>
           </Form>

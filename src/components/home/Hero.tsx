@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 import heroBg from "@/assets/hero_try.png";
 import logo from "@/assets/logo.png";
 
 const Hero = () => {
+  const { t } = useLanguage();
+  
   return (
     <section className="relative min-h-screen flex items-start justify-center pt-48 overflow-hidden">
       {/* Background Image with Gradient to Section Bg Color */}
@@ -34,7 +37,7 @@ const Hero = () => {
           className="text-gray-400 font-body max-w-3xl mx-auto"
           style={{ fontSize: "clamp(1rem, 2.5vw, 1.5rem)" }}
         >
-          Strategic Advisory for Transformative Outcomes
+          {t("hero.tagline")}
         </p>
       </motion.div>
     </section>

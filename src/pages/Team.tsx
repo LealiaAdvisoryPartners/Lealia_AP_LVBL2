@@ -1,41 +1,34 @@
 import { motion } from "framer-motion";
 import { Mail, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 import teamMember1 from "@/assets/team-member-1.jpg";
 import teamMember2 from "@/assets/team-member-2.jpg";
 
-const teamMembers = [
-  {
-    id: "john-anderson",
-    name: "John Anderson",
-    role: "Managing Partner",
-    email: "j.anderson@lealia.com",
-    linkedin: "https://linkedin.com",
-    image: teamMember1,
-    bio: [
-      "John Anderson is a Managing Partner at Lealia Advisory Partners with over 20 years of experience in M&A advisory and investment banking. He has advised on transactions valued at over $15 billion across diverse industries including technology, healthcare, manufacturing, and financial services.",
-      "Prior to co-founding Lealia, John spent 12 years at a leading global investment bank where he served as Managing Director in the M&A group. He specialized in advising middle-market companies on strategic transactions, including buy-side advisory, sell-side advisory, and capital raising initiatives.",
-      "John holds an MBA from Harvard Business School and a Bachelor's degree in Economics from Yale University. He is a frequent speaker at industry conferences and has been recognized as a leading M&A advisor by various industry publications.",
-      "His approach is characterized by deep analytical rigor, creative problem-solving, and an unwavering commitment to client success. John is known for his ability to navigate complex negotiations and deliver outcomes that exceed client expectations.",
-    ],
-  },
-  {
-    id: "sarah-mitchell",
-    name: "Sarah Mitchell",
-    role: "Managing Partner",
-    email: "s.mitchell@lealia.com",
-    linkedin: "https://linkedin.com",
-    image: teamMember2,
-    bio: [
-      "Sarah Mitchell is a Managing Partner at Lealia Advisory Partners, bringing extensive expertise in performance improvement, operational optimization, and strategic transformation. With over 18 years of experience, she has helped numerous organizations unlock value and achieve sustainable growth.",
-      "Before joining Lealia, Sarah was a Partner at a premier management consulting firm, where she led engagements focused on operational excellence, cost reduction, and post-merger integration. Her work has driven significant improvements in profitability and operational efficiency for clients across various sectors.",
-      "Sarah earned her MBA from Stanford Graduate School of Business and holds a Bachelor's degree in Engineering from MIT. She is a Certified Management Consultant (CMC) and has published several articles on performance improvement best practices.",
-      "Sarah's collaborative approach and analytical acumen enable her to quickly identify opportunities and develop practical, implementable strategies. She is passionate about partnering with clients to achieve transformative results and build lasting organizational capabilities.",
-    ],
-  },
-];
-
 const Team = () => {
+  const { t } = useLanguage();
+  
+  const teamMembers = [
+    {
+      id: "john-anderson",
+      name: "John Anderson",
+      role: t("teampage.role"),
+      email: "j.anderson@lealia.com",
+      linkedin: "https://linkedin.com",
+      image: teamMember1,
+      bio: [t("teampage.bio1.p1"), t("teampage.bio1.p2"), t("teampage.bio1.p3"), t("teampage.bio1.p4")],
+    },
+    {
+      id: "sarah-mitchell",
+      name: "Sarah Mitchell",
+      role: t("teampage.role"),
+      email: "s.mitchell@lealia.com",
+      linkedin: "https://linkedin.com",
+      image: teamMember2,
+      bio: [t("teampage.bio2.p1"), t("teampage.bio2.p2"), t("teampage.bio2.p3"), t("teampage.bio2.p4")],
+    },
+  ];
+  
   const scrollToContact = () => {
     window.location.href = "/#contact";
   };
@@ -50,12 +43,10 @@ const Team = () => {
           transition={{ duration: 0.6 }}
         >
           <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-6">
-            Meet Our Team
+            {t("teampage.title")}
           </h1>
           <p className="text-lg text-muted-foreground max-w-4xl font-body leading-relaxed">
-            Our team combines deep industry expertise, analytical rigor, and a genuine commitment
-            to client success. We bring decades of experience in M&A advisory, strategy
-            consulting, and operational improvement to every engagement.
+            {t("teampage.intro")}
           </p>
         </motion.div>
       </section>

@@ -2,29 +2,32 @@ import { motion } from "framer-motion";
 import { TrendingUp, BarChart, Calculator } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-
-const services = [
-  {
-    icon: TrendingUp,
-    title: "M&A Advisory",
-    description: "Comprehensive buy-side and sell-side advisory for strategic transactions",
-    link: "/services#buy-side", // you can also choose #sell-side or split into two cards if preferred
-  },
-  {
-    icon: BarChart,
-    title: "Performance Improvement",
-    description: "Operational optimization and strategic enhancement initiatives",
-    link: "/services#performance",
-  },
-  {
-    icon: Calculator,
-    title: "Financial Modeling",
-    description: "Sophisticated financial models for decision-making and valuation",
-    link: "/services#modeling",
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const ServicesOverview = () => {
+  const { t } = useLanguage();
+  
+  const services = [
+    {
+      icon: TrendingUp,
+      title: t("services.ma"),
+      description: t("services.ma.desc"),
+      link: "/services#buy-side",
+    },
+    {
+      icon: BarChart,
+      title: t("services.performance"),
+      description: t("services.performance.desc"),
+      link: "/services#performance",
+    },
+    {
+      icon: Calculator,
+      title: t("services.modeling"),
+      description: t("services.modeling.desc"),
+      link: "/services#modeling",
+    },
+  ];
+
   return (
     <section className="section-container bg-background">
       <motion.div
@@ -34,7 +37,7 @@ const ServicesOverview = () => {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h2 className="section-title">Our Services</h2>
+        <h2 className="section-title">{t("services.title")}</h2>
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
@@ -44,7 +47,7 @@ const ServicesOverview = () => {
             <Link
               key={service.title}
               to={service.link}
-              className="card-elegant p-8 text-center block" // block to cover full card area
+              className="card-elegant p-8 text-center block"
             >
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -74,7 +77,7 @@ const ServicesOverview = () => {
         className="text-center"
       >
         <Link to="/services">
-          <Button className="btn-gold">Learn More About Our Services</Button>
+          <Button className="btn-gold">{t("services.cta")}</Button>
         </Link>
       </motion.div>
     </section>
