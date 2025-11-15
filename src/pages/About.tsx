@@ -33,111 +33,146 @@ const whyUsItems = [
 const About = () => {
   return (
     <>
-        {/* Introduction Section */}
-        <section className="section-container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-6">
-              About Lealia Advisory Partners
-            </h1>
-            <p className="text-lg text-muted-foreground max-w-4xl font-body leading-relaxed">
-              Lealia Advisory Partners is a premier M&A advisory firm dedicated to providing
-              strategic guidance and expert counsel to businesses navigating complex transactions
-              and transformative growth opportunities. With deep industry expertise and a
-              client-centric approach, we deliver exceptional results that create lasting value for
-              our clients.
-            </p>
-          </motion.div>
-        </section>
+      {/* Introduction Section */}
+      <section className="section-container">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-6">
+            About Lealia Advisory Partners
+          </h1>
+          <p className="text-lg text-muted-foreground max-w-4xl font-body leading-relaxed">
+            Lealia Advisory Partners is a premier M&A advisory firm dedicated
+            to providing strategic guidance and expert counsel to businesses
+            navigating complex transactions and transformative growth
+            opportunities. With deep industry expertise and a client-centric
+            approach, we deliver exceptional results that create lasting value
+            for our clients.
+          </p>
+        </motion.div>
+      </section>
 
-        {/* Why Us Section */}
-        <section className="section-container bg-secondary">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="section-title mb-12">Why Choose Us?</h2>
-            <div className="max-w-4xl">
-              <Accordion type="single" collapsible className="space-y-4">
-                {whyUsItems.map((item, index) => (
-                  <motion.div
-                    key={item.title}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
+      {/* Why Us Section */}
+      <section className="section-container bg-secondary">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="section-title mb-12">Why Choose Us?</h2>
+          <div className="max-w-4xl">
+            <Accordion type="single" collapsible className="space-y-4">
+              {whyUsItems.map((item, index) => (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                >
+                  <AccordionItem
+                    value={`item-${index}`}
+                    className="card-elegant px-6 border-0"
                   >
-                    <AccordionItem
-                      value={`item-${index}`}
-                      className="card-elegant px-6 border-0"
-                    >
-                      <AccordionTrigger className="text-lg font-heading font-semibold text-primary hover:text-accent">
-                        {item.title}
-                      </AccordionTrigger>
-                      <AccordionContent className="text-muted-foreground font-body pt-2">
-                        {item.content}
-                      </AccordionContent>
-                    </AccordionItem>
-                  </motion.div>
-                ))}
-              </Accordion>
-            </div>
-          </motion.div>
-        </section>
+                    <AccordionTrigger className="text-lg font-heading font-semibold text-primary hover:text-accent">
+                      {item.title}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground font-body pt-2">
+                      {item.content}
+                    </AccordionContent>
+                  </AccordionItem>
+                </motion.div>
+              ))}
+            </Accordion>
+          </div>
+        </motion.div>
+      </section>
 
-        {/* How We Were Formed Section */}
-        <section className="section-container">
+      {/* How We Were Formed Section */}
+      <section className="section-container">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="section-title mb-12">Our Story</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-4 font-body text-muted-foreground leading-relaxed">
+              <p>
+                Lealia Advisory Partners was founded by a team of seasoned M&A
+                professionals who recognized a need for a different kind of
+                advisory firm—one that truly puts clients first and combines
+                deep technical expertise with genuine partnership and integrity.
+              </p>
+              <p>
+                Our founders spent years at leading investment banks and
+                consulting firms, advising on some of the most complex and
+                high-profile transactions in the market. Through these
+                experiences, they developed a shared vision: to create an
+                advisory firm that delivers the highest caliber of strategic
+                counsel while maintaining an unwavering commitment to client
+                success.
+              </p>
+              <p>
+                Today, Lealia Advisory Partners stands as a trusted advisor to
+                businesses across industries, known for our rigorous
+                analytical approach, creative problem-solving, and dedication
+                to achieving transformative outcomes for our clients. We are
+                proud of the relationships we have built and the results we
+                have delivered, and we look forward to continuing this journey
+                of excellence and partnership.
+              </p>
+            </div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative"
+            >
+              <img
+                src={aboutStory}
+                alt="Lealia Advisory Partners Team"
+                className="rounded-lg shadow-[var(--shadow-elegant)] w-full"
+              />
+            </motion.div>
+          </div>
+
+          {/* Take me to Services button below story */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="text-center mt-12"
           >
-            <h2 className="section-title mb-12">Our Story</h2>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="space-y-4 font-body text-muted-foreground leading-relaxed">
-                <p>
-                  Lealia Advisory Partners was founded by a team of seasoned M&A professionals who
-                  recognized a need for a different kind of advisory firm—one that truly puts
-                  clients first and combines deep technical expertise with genuine partnership and
-                  integrity.
-                </p>
-                <p>
-                  Our founders spent years at leading investment banks and consulting firms,
-                  advising on some of the most complex and high-profile transactions in the market.
-                  Through these experiences, they developed a shared vision: to create an advisory
-                  firm that delivers the highest caliber of strategic counsel while maintaining an
-                  unwavering commitment to client success.
-                </p>
-                <p>
-                  Today, Lealia Advisory Partners stands as a trusted advisor to businesses across
-                  industries, known for our rigorous analytical approach, creative problem-solving,
-                  and dedication to achieving transformative outcomes for our clients. We are proud
-                  of the relationships we have built and the results we have delivered, and we look
-                  forward to continuing this journey of excellence and partnership.
-                </p>
-              </div>
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="relative"
+            <a
+              href="/services"
+              className="inline-flex items-center text-primary font-semibold text-lg hover:text-accent transition-colors"
+            >
+              Take me to Services
+              <svg
+                className="ml-2 w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                focusable="false"
               >
-                <img
-                  src={aboutStory}
-                  alt="Lealia Advisory Partners Team"
-                  className="rounded-lg shadow-[var(--shadow-elegant)] w-full"
-                />
-              </motion.div>
-            </div>
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </a>
           </motion.div>
-        </section>
+        </motion.div>
+      </section>
     </>
   );
 };
