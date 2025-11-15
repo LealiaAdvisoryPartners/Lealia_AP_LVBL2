@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { TrendingUp, BarChart, Calculator } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const services = [
   {
@@ -32,7 +34,7 @@ const ServicesOverview = () => {
         <h2 className="section-title">Our Services</h2>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
         {services.map((service, index) => {
           const Icon = service.icon;
           return (
@@ -55,6 +57,19 @@ const ServicesOverview = () => {
           );
         })}
       </div>
+
+      {/* Single button below the services grid */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+        className="text-center"
+      >
+        <Link to="/services">
+          <Button className="btn-gold">Learn More About Our Services</Button>
+        </Link>
+      </motion.div>
     </section>
   );
 };
