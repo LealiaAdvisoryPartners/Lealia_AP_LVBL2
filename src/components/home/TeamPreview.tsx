@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Mail, Linkedin, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 import teamMember1 from "@/assets/team-member-1.jpg";
 import teamMember2 from "@/assets/team-member-2.jpg";
 
@@ -8,7 +9,7 @@ const teamMembers = [
   {
     id: "john-anderson",
     name: "John Anderson",
-    role: "Managing Partner",
+    role: "teampage.role",
     image: teamMember1,
     email: "j.anderson@lealia.com",
     linkedin: "https://linkedin.com",
@@ -16,7 +17,7 @@ const teamMembers = [
   {
     id: "sarah-mitchell",
     name: "Sarah Mitchell",
-    role: "Managing Partner",
+    role: "teampage.role",
     image: teamMember2,
     email: "s.mitchell@lealia.com",
     linkedin: "https://linkedin.com",
@@ -24,6 +25,8 @@ const teamMembers = [
 ];
 
 const TeamPreview = () => {
+  const { t } = useLanguage();
+  
   return (
     <section className="section-container bg-secondary">
       <motion.div
@@ -33,9 +36,9 @@ const TeamPreview = () => {
         transition={{ duration: 0.6 }}
         className="text-center mb-12"
       >
-        <h2 className="section-title">Our Team</h2>
+        <h2 className="section-title">{t("team.title")}</h2>
         <p className="section-subtitle mx-auto">
-          Led by experienced professionals with deep M&A and financial expertise
+          {t("team.subtitle")}
         </p>
       </motion.div>
 
@@ -60,7 +63,7 @@ const TeamPreview = () => {
               <h3 className="text-xl font-heading font-semibold text-primary mb-1">
                 {member.name}
               </h3>
-              <p className="text-muted-foreground font-body italic mb-4">{member.role}</p>
+              <p className="text-muted-foreground font-body italic mb-4">{t(member.role)}</p>
             </Link>
             <div className="flex justify-center gap-4">
               <a
@@ -90,7 +93,7 @@ const TeamPreview = () => {
           to="/team"
           className="inline-flex items-center gap-2 text-primary font-semibold text-lg hover:text-primary/70 transition-colors"
         >
-          Meet Our Team <ArrowRight className="w-5 h-5" />
+          {t("team.cta")} <ArrowRight className="w-5 h-5" />
         </Link>
       </div>
     </section>

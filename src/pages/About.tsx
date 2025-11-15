@@ -5,32 +5,31 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useLanguage } from "@/contexts/LanguageContext";
 import aboutStory from "@/assets/about-story.jpg";
 
-const whyUsItems = [
-  {
-    title: "Deep Industry Expertise",
-    content:
-      "Our team brings decades of combined experience in M&A advisory, having successfully guided transactions across diverse industries and deal sizes. We understand the nuances of complex business transactions and leverage this knowledge to deliver superior outcomes for our clients.",
-  },
-  {
-    title: "Tailored Solutions",
-    content:
-      "We recognize that every business is unique, with its own challenges and opportunities. Our approach is highly customized, ensuring that our strategies align perfectly with your specific goals, industry dynamics, and organizational culture.",
-  },
-  {
-    title: "Proven Track Record",
-    content:
-      "We have consistently delivered exceptional results for our clients, from successful acquisitions and strategic divestitures to transformative performance improvement initiatives. Our track record speaks to our commitment to excellence and measurable outcomes.",
-  },
-  {
-    title: "Client-Centric Approach",
-    content:
-      "We view ourselves as long-term partners in your success. Our relationships are built on trust, transparency, and open communication. We are deeply invested in understanding your business and working collaboratively to achieve your strategic objectives.",
-  },
-];
-
 const About = () => {
+  const { t } = useLanguage();
+  
+  const whyUsItems = [
+    {
+      title: t("about.whyus.expertise"),
+      content: t("about.whyus.expertise.desc"),
+    },
+    {
+      title: t("about.whyus.tailored"),
+      content: t("about.whyus.tailored.desc"),
+    },
+    {
+      title: t("about.whyus.track"),
+      content: t("about.whyus.track.desc"),
+    },
+    {
+      title: t("about.whyus.client"),
+      content: t("about.whyus.client.desc"),
+    },
+  ];
+
   return (
     <>
       {/* Introduction Section */}
@@ -41,15 +40,10 @@ const About = () => {
           transition={{ duration: 0.6 }}
         >
           <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-6">
-            About Lealia Advisory Partners
+            {t("about.title")}
           </h1>
           <p className="text-lg text-muted-foreground max-w-4xl font-body leading-relaxed">
-            Lealia Advisory Partners is a premier M&A advisory firm dedicated
-            to providing strategic guidance and expert counsel to businesses
-            navigating complex transactions and transformative growth
-            opportunities. With deep industry expertise and a client-centric
-            approach, we deliver exceptional results that create lasting value
-            for our clients.
+            {t("about.intro")}
           </p>
         </motion.div>
       </section>
@@ -62,7 +56,7 @@ const About = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="section-title mb-12">Why Choose Us?</h2>
+          <h2 className="section-title mb-12">{t("about.whyus.title")}</h2>
           <div className="max-w-4xl">
             <Accordion type="single" collapsible className="space-y-4">
               {whyUsItems.map((item, index) => (
@@ -99,33 +93,13 @@ const About = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="section-title mb-12">Our Story</h2>
+          <h2 className="section-title mb-12">{t("about.story.title")}</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-4 font-body text-muted-foreground leading-relaxed">
-              <p>
-                Lealia Advisory Partners was founded by a team of seasoned M&A
-                professionals who recognized a need for a different kind of
-                advisory firm—one that truly puts clients first and combines
-                deep technical expertise with genuine partnership and integrity.
-              </p>
-              <p>
-                Our founders spent years at leading investment banks and
-                consulting firms, advising on some of the most complex and
-                high-profile transactions in the market. Through these
-                experiences, they developed a shared vision: to create an
-                advisory firm that delivers the highest caliber of strategic
-                counsel while maintaining an unwavering commitment to client
-                success.
-              </p>
-              <p>
-                Today, Lealia Advisory Partners stands as a trusted advisor to
-                businesses across industries, known for our rigorous
-                analytical approach, creative problem-solving, and dedication
-                to achieving transformative outcomes for our clients. We are
-                proud of the relationships we have built and the results we
-                have delivered, and we look forward to continuing this journey
-                of excellence and partnership.
-              </p>
+              <p>{t("about.story.p1")}</p>
+              <p>{t("about.story.p2")}</p>
+              <p>{t("about.story.p3")}</p>
+              <p>{t("about.story.p4")}</p>
             </div>
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}

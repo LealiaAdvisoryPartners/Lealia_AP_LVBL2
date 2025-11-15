@@ -2,31 +2,34 @@ import { motion } from "framer-motion";
 import { Shield, Award, Handshake, Lightbulb } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-
-const values = [
-  {
-    icon: Shield,
-    title: "Integrity",
-    description: "We uphold the highest ethical standards in every engagement",
-  },
-  {
-    icon: Award,
-    title: "Excellence",
-    description: "We deliver exceptional results through rigorous analysis and expertise",
-  },
-  {
-    icon: Handshake,
-    title: "Partnership",
-    description: "We work alongside our clients as trusted advisors",
-  },
-  {
-    icon: Lightbulb,
-    title: "Innovation",
-    description: "We bring creative solutions to complex business challenges",
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const CoreValues = () => {
+  const { t } = useLanguage();
+  
+  const values = [
+    {
+      icon: Shield,
+      title: t("values.integrity"),
+      description: t("values.integrity.desc"),
+    },
+    {
+      icon: Award,
+      title: t("values.excellence"),
+      description: t("values.excellence.desc"),
+    },
+    {
+      icon: Handshake,
+      title: t("values.partnership"),
+      description: t("values.partnership.desc"),
+    },
+    {
+      icon: Lightbulb,
+      title: t("values.innovation"),
+      description: t("values.innovation.desc"),
+    },
+  ];
+
   return (
     <section className="section-container bg-background py-20 sm:py-24">
       {/* Section Title */}
@@ -37,7 +40,7 @@ const CoreValues = () => {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h2 className="section-title">Our Foundation</h2>
+        <h2 className="section-title">{t("values.title")}</h2>
       </motion.div>
 
       {/* Core Values Grid */}
@@ -80,7 +83,7 @@ const CoreValues = () => {
         className="text-center mt-12"
       >
         <Link to="/about">
-          <Button className="btn-gold">Learn More About Us</Button>
+          <Button className="btn-gold">{t("values.cta")}</Button>
         </Link>
       </motion.div>
     </section>

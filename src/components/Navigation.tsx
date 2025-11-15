@@ -3,17 +3,20 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
+import LanguageToggle from "./LanguageToggle";
 import logoHeader from "@/assets/Logo_text_biggerfont_samesize_2.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { t } = useLanguage();
 
   const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Services", path: "/services" },
-    { name: "Team", path: "/team" },
+    { name: t("nav.home"), path: "/" },
+    { name: t("nav.about"), path: "/about" },
+    { name: t("nav.services"), path: "/services" },
+    { name: t("nav.team"), path: "/team" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -36,7 +39,7 @@ const Navigation = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -49,6 +52,9 @@ const Navigation = () => {
               </Link>
             ))}
 
+            {/* Language Toggle */}
+            <LanguageToggle />
+
             {/* Contact Us button styled like btn-gold */}
             <motion.div
               initial={{ opacity: 0 }}
@@ -57,7 +63,7 @@ const Navigation = () => {
               className=""
             >
               <Button onClick={scrollToContact} className="btn-gold">
-                Contact Us
+                {t("nav.contact")}
               </Button>
             </motion.div>
           </div>
@@ -91,6 +97,12 @@ const Navigation = () => {
               </Link>
             ))}
 
+            {/* Language Toggle Mobile */}
+            <div className="px-4 py-2 flex items-center gap-2">
+              <span className="text-sm text-muted-foreground">Language:</span>
+              <LanguageToggle />
+            </div>
+
             {/* Mobile Contact Us button styled like btn-gold */}
             <motion.div
               initial={{ opacity: 0 }}
@@ -105,7 +117,7 @@ const Navigation = () => {
                 }}
                 className="btn-gold w-full text-center"
               >
-                Contact Us
+                {t("nav.contact")}
               </Button>
             </motion.div>
           </div>

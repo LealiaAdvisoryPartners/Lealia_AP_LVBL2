@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 import logo from "@/assets/logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
 
   return (
     <footer className="bg-primary text-primary-foreground">
@@ -16,37 +18,37 @@ const Footer = () => {
               className="w-64 mb-2"
             />
             <p className="text-primary-foreground/80 text-sm">
-              Strategic Advisory for Transformative Outcomes
+              {t("footer.tagline")}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-sm font-body font-semibold mb-4 text-accent">Quick Links</h4>
+            <h4 className="text-sm font-body font-semibold mb-4 text-accent">{t("footer.quicklinks")}</h4>
             <div className="flex flex-wrap gap-x-6 gap-y-2">
               <Link
                 to="/about"
                 className="text-sm text-primary-foreground/80 hover:text-accent transition-colors"
               >
-                About
+                {t("nav.about")}
               </Link>
               <Link
                 to="/services"
                 className="text-sm text-primary-foreground/80 hover:text-accent transition-colors"
               >
-                Services
+                {t("nav.services")}
               </Link>
               <Link
                 to="/team"
                 className="text-sm text-primary-foreground/80 hover:text-accent transition-colors"
               >
-                Team
+                {t("nav.team")}
               </Link>
               <Link
                 to="/#contact"
                 className="text-sm text-primary-foreground/80 hover:text-accent transition-colors"
               >
-                Contact
+                {t("nav.contact")}
               </Link>
             </div>
           </div>
@@ -55,7 +57,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="border-t border-primary-foreground/20 pt-8">
           <p className="text-sm text-primary-foreground/60 text-center">
-            © {currentYear} Lealia Advisory Partners. All rights reserved.
+            © {currentYear} Lealia Advisory Partners. {t("footer.copyright")}
           </p>
         </div>
       </div>
