@@ -8,7 +8,7 @@ const Hero = () => {
       {/* Background Image with Gradient to Section Bg Color */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-center"
-        style={{ 
+        style={{
           backgroundImage: `url(${heroBg})`,
           backgroundPosition: "50% 65%",
         }}
@@ -27,8 +27,8 @@ const Hero = () => {
         <img
           src={logo}
           alt="Lealia Advisory Partners"
-          className="mx-auto mb-6"
-          style={{ width: "clamp(150px, 50vw, 900px)", height: "auto" }}
+          className="w-full max-w-2xl mx-auto mb-6"
+          style={{ height: "auto" }}
         />
         <p
           className="text-gray-400 font-body max-w-3xl mx-auto"
