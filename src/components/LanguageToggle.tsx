@@ -1,33 +1,36 @@
+import { Globe } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { useLanguage } from "@/contexts/LanguageContext";
+
 const LanguageToggle = () => {
   const { language, setLanguage } = useLanguage();
 
   const languages = [
-    { code: "en", label: "EN" },
-    { code: "pt", label: "PT" },
-    { code: "es", label: "ES" },
+    { code: "en", label: "English" },
+    { code: "pt", label: "Português" },
+    { code: "es", label: "Español" },
   ];
-
-  const current = languages.find((l) => l.code === language);
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        {/* Change 'variant' and add matching className */}
-        <Button
-          variant="default" // Use 'default' or your nav button variant here
-          className="flex items-center gap-1 font-medium px-4 py-2 rounded-md" // Match nav button styles: padding, font, etc.
-        >
-          {current?.code.toUpperCase()}
-          <ChevronDown className="w-4 h-4 opacity-70" />
+        <Button variant="ghost" size="icon" className="h-9 w-9">
+          <Globe className="h-5 w-5" />
+          <span className="sr-only">Select language</span>
         </Button>
       </DropdownMenuTrigger>
-
-      <DropdownMenuContent>
+      <DropdownMenuContent align="end">
         {languages.map((lang) => (
           <DropdownMenuItem
             key={lang.code}
-            onClick={() => setLanguage(lang.code)}
-            className={lang.code === language ? "font-semibold text-accent" : ""}
+            onClick={() => setLanguage(lang.code as "en" | "pt" | "es")}
+            className={language === lang.code ? "bg-accent" : ""}
           >
             {lang.label}
           </DropdownMenuItem>
@@ -36,3 +39,5 @@ const LanguageToggle = () => {
     </DropdownMenu>
   );
 };
+
+export default LanguageToggle;
