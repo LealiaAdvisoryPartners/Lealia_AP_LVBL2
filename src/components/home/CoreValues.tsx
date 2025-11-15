@@ -28,7 +28,8 @@ const values = [
 
 const CoreValues = () => {
   return (
-    <section className="section-container bg-background">
+    <section className="section-container bg-background py-20 sm:py-24">
+      {/* Section Title */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -39,7 +40,8 @@ const CoreValues = () => {
         <h2 className="section-title">Our Foundation</h2>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+      {/* Core Values Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
         {values.map((value, index) => {
           const Icon = value.icon;
           return (
@@ -49,26 +51,33 @@ const CoreValues = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="card-elegant p-8 text-center"
+              className="text-center md:text-left"
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/10 mb-4">
-                <Icon className="w-8 h-8 text-accent" />
+              <div className="flex justify-center md:justify-start mb-4">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/10">
+                  <Icon className="w-8 h-8 text-accent" />
+                </div>
               </div>
-              <h3 className="text-xl font-heading font-semibold text-primary mb-3">
+
+              <h3 className="mt-4 text-xl font-heading font-semibold text-primary">
                 {value.title}
               </h3>
-              <p className="text-muted-foreground font-body">{value.description}</p>
+
+              <p className="mt-2 text-muted-foreground font-body">
+                {value.description}
+              </p>
             </motion.div>
           );
         })}
       </div>
 
+      {/* Single Button Below Grid */}
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.4 }}
-        className="text-center"
+        className="text-center mt-12"
       >
         <Link to="/about">
           <Button className="btn-gold">Learn More About Us</Button>
