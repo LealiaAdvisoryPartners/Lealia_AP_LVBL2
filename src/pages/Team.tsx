@@ -6,6 +6,7 @@ import teamMember2 from "@/assets/team-member-2.jpg";
 
 const teamMembers = [
   {
+    id: "john-anderson",
     name: "John Anderson",
     role: "Managing Partner",
     email: "j.anderson@lealia.com",
@@ -19,6 +20,7 @@ const teamMembers = [
     ],
   },
   {
+    id: "sarah-mitchell",
     name: "Sarah Mitchell",
     role: "Managing Partner",
     email: "s.mitchell@lealia.com",
@@ -63,7 +65,7 @@ const Team = () => {
         const isEven = index % 2 === 0;
 
         return (
-          <section key={member.name} className="section-container py-12">
+          <section id={member.id} key={member.name} className="section-container py-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

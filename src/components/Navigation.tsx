@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoHeader from "@/assets/logo-header.png";
+import logoHeader from "@/assets/Logo_text_biggerfont_samesize_2.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);

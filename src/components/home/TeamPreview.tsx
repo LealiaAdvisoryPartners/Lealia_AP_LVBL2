@@ -6,6 +6,7 @@ import teamMember2 from "@/assets/team-member-2.jpg";
 
 const teamMembers = [
   {
+    id: "john-anderson",
     name: "John Anderson",
     role: "Managing Partner",
     image: teamMember1,
@@ -13,6 +14,7 @@ const teamMembers = [
     linkedin: "https://linkedin.com",
   },
   {
+    id: "sarah-mitchell",
     name: "Sarah Mitchell",
     role: "Managing Partner",
     image: teamMember2,
@@ -47,7 +49,7 @@ const TeamPreview = () => {
             transition={{ duration: 0.6, delay: index * 0.1 }}
             className="card-elegant p-6"
           >
-            <Link to="/team" className="block group">
+            <Link to={`/team#${member.id}`} className="block group">
               <div className="relative overflow-hidden rounded-lg mb-4">
                 <img
                   src={member.image}
