@@ -1,39 +1,36 @@
-import { useLanguage } from "@/contexts/LanguageContext";
+import { Globe } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
-  DropdownMenuTrigger,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { ChevronDown } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const LanguageToggle = () => {
   const { language, setLanguage } = useLanguage();
 
   const languages = [
     { code: "en", label: "English" },
-    { code: "fr", label: "Français" },
+    { code: "pt", label: "Português" },
     { code: "es", label: "Español" },
   ];
-
-  const current = languages.find((l) => l.code === language);
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" className="flex items-center gap-1 font-medium">
-          {current?.code.toUpperCase()}
-          <ChevronDown className="w-4 h-4 opacity-70" />
+        <Button variant="ghost" size="icon" className="h-9 w-9">
+          <Globe className="h-5 w-5" />
+          <span className="sr-only">Select language</span>
         </Button>
       </DropdownMenuTrigger>
-
-      <DropdownMenuContent>
+      <DropdownMenuContent align="end">
         {languages.map((lang) => (
           <DropdownMenuItem
             key={lang.code}
-            onClick={() => setLanguage(lang.code)}
-            className={lang.code === language ? "font-semibold text-accent" : ""}
+            onClick={() => setLanguage(lang.code as "en" | "pt" | "es")}
+            className={language === lang.code ? "bg-accent" : ""}
           >
             {lang.label}
           </DropdownMenuItem>
