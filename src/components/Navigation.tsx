@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageToggle from "./LanguageToggle";
-import logoHeader from "@/assets/Logo_text_biggerfont_samesize_2.png";
+import logoHeader from "@/assets/logo-header.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,11 +31,7 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img
-              src={logoHeader}
-              alt="Lealia Advisory Partners"
-              className="h-8 w-auto"
-            />
+            <img src={logoHeader} alt="Lealia Advisory Partners" className="h-8 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -69,12 +65,7 @@ const Navigation = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden"
-            onClick={() => setIsOpen(!isOpen)}
-          >
+          <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </Button>
         </div>
@@ -88,9 +79,7 @@ const Navigation = () => {
                 to={link.path}
                 onClick={() => setIsOpen(false)}
                 className={`block px-4 py-2 font-body font-medium transition-colors hover:bg-secondary rounded-md ${
-                  isActive(link.path)
-                    ? "text-accent bg-secondary"
-                    : "text-foreground"
+                  isActive(link.path) ? "text-accent bg-secondary" : "text-foreground"
                 }`}
               >
                 {link.name}
