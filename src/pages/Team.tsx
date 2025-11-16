@@ -37,11 +37,11 @@ const Team = () => {
   return (
     <>
       {/* Decorative Logo */}
-      <div className="fixed top-0 right-0 overflow-hidden pointer-events-none z-0 w-64 h-64">
+      <div className="fixed top-0 right-0 overflow-hidden pointer-events-none z-0 w-[400px] h-[400px]">
         <img 
           src={logoCircle} 
           alt="" 
-          className="absolute -top-16 -right-16 w-64 h-64 opacity-10"
+          className="absolute -top-24 -right-24 w-[400px] h-[400px] opacity-10"
         />
       </div>
 
