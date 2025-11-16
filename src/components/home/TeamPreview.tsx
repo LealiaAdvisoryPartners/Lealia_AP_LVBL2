@@ -2,13 +2,13 @@ import { motion } from "framer-motion";
 import { Mail, Linkedin, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
-import teamMember1 from "@/assets/team-member-1.jpg";
-import teamMember2 from "@/assets/team-member-2.jpg";
+import teamMember1 from "@/assets/ranf_foto.jpeg";
+import teamMember2 from "@/assets/drp_foto.jpg";
 
 const teamMembers = [
   {
     id: "john-anderson",
-    name: "John Anderson",
+    name: "Ricardo Nascimento Ferreira",
     role: "teampage.role",
     image: teamMember1,
     email: "j.anderson@lealia.com",
@@ -16,7 +16,7 @@ const teamMembers = [
   },
   {
     id: "sarah-mitchell",
-    name: "Sarah Mitchell",
+    name: "Duarte Rocha Pereira",
     role: "teampage.role",
     image: teamMember2,
     email: "s.mitchell@lealia.com",

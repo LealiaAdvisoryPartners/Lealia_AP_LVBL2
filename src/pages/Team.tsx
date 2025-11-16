@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { Mail, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
-import teamMember1 from "@/assets/team-member-1.jpg";
-import teamMember2 from "@/assets/team-member-2.jpg";
+import teamMember1 from "@/assets/ranf_foto.jpeg";
+import teamMember2 from "@/assets/drp_foto.jpg";
 
 const Team = () => {
   const { t } = useLanguage();
@@ -11,7 +11,7 @@ const Team = () => {
   const teamMembers = [
     {
       id: "john-anderson",
-      name: "John Anderson",
+      name: "Ricardo Nascimento Ferreira",
       role: t("teampage.role"),
       email: "j.anderson@lealia.com",
       linkedin: "https://linkedin.com",
@@ -20,7 +20,7 @@ const Team = () => {
     },
     {
       id: "sarah-mitchell",
-      name: "Sarah Mitchell",
+      name: "Duarte Rocha Pereira",
       role: t("teampage.role"),
       email: "s.mitchell@lealia.com",
       linkedin: "https://linkedin.com",
