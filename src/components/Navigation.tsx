@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageToggle from "./LanguageToggle";
-import logoHeader from "@/assets/logo-header.png";
+import logoHeader from "@/assets/Logo_text_biggerfont_samesize_2.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
