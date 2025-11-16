@@ -1,0 +1,56 @@
+import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
+
+export const ServicesModeling = () => {
+  const { t } = useLanguage();
+
+  return (
+    <section id="modeling" className="section-container">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        <h2 className="section-title mb-6">{t("servicespage.modeling.title")}</h2>
+
+        <p className="text-lg text-muted-foreground max-w-4xl font-body leading-relaxed mb-12">
+          {t("servicespage.modeling.desc")}
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {[
+            {
+              title: t("servicespage.modeling.item1"),
+              desc: "DCF, comparable company analysis, precedent transactions",
+            },
+            {
+              title: t("servicespage.modeling.item2"),
+              desc: "Detailed forecasts of revenue, expenses, and cash flows",
+            },
+            {
+              title: t("servicespage.modeling.item3"),
+              desc: "Stress testing and sensitivity analysis for key assumptions",
+            },
+            {
+              title: t("servicespage.modeling.item4"),
+              desc: "ROI, IRR, and payback period calculations",
+            },
+          ].map((type, index) => (
+            <motion.div
+              key={type.title}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              className="card-elegant p-6"
+            >
+              <h3 className="font-heading font-semibold text-primary mb-2">{type.title}</h3>
+              <p className="text-muted-foreground font-body text-sm">{type.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
+    </section>
+  );
+};
