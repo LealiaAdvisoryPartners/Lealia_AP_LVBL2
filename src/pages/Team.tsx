@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import teamMember1 from "@/assets/ranf_foto.jpeg";
 import teamMember2 from "@/assets/drp_foto.jpg";
+import logoCircle from "@/assets/Logo_no_text_zoom_704x704.png";
 
 const Team = () => {
   const { t } = useLanguage();
@@ -35,8 +36,17 @@ const Team = () => {
 
   return (
     <>
+      {/* Decorative Logo */}
+      <div className="fixed top-0 right-0 overflow-hidden pointer-events-none z-0 w-64 h-64">
+        <img 
+          src={logoCircle} 
+          alt="" 
+          className="absolute -top-16 -right-16 w-64 h-64 opacity-10"
+        />
+      </div>
+
       {/* Header Section */}
-      <section className="section-container pb-12">
+      <section className="section-container pb-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
