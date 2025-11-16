@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/accordion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import aboutStory from "@/assets/about-story.jpg";
+import logoCircle from "@/assets/Logo_no_text_zoom_704x704.png";
 
 const About = () => {
   const { t } = useLanguage();
@@ -32,8 +33,17 @@ const About = () => {
 
   return (
     <>
+      {/* Decorative Logo */}
+      <div className="fixed top-0 right-0 overflow-hidden pointer-events-none z-0 w-64 h-64">
+        <img 
+          src={logoCircle} 
+          alt="" 
+          className="absolute -top-16 -right-16 w-64 h-64 opacity-10"
+        />
+      </div>
+
       {/* Introduction Section */}
-      <section className="section-container">
+      <section className="section-container relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

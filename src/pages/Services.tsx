@@ -12,6 +12,7 @@ import {
   Menu,
   X,
 } from "lucide-react";
+import logoCircle from "@/assets/Logo_no_text_zoom_704x704.png";
 
 const Services = () => {
   const [activeSection, setActiveSection] = useState("overview");
@@ -70,6 +71,15 @@ const Services = () => {
 
   return (
     <div className="flex relative">
+      {/* Decorative Logo */}
+      <div className="fixed top-0 right-0 overflow-hidden pointer-events-none z-0 w-64 h-64">
+        <img 
+          src={logoCircle} 
+          alt="" 
+          className="absolute -top-16 -right-16 w-64 h-64 opacity-10"
+        />
+      </div>
+
       {/* MOBILE NAV BUTTON */}
       <button
         onClick={() => setMobileNavOpen(true)}
