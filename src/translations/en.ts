@@ -133,4 +133,6 @@ export const en = {
   "servicespage.modeling.item4": "Forecasting Models",
   "servicespage.modeling.item5": "LBO Models",
   "servicespage.modeling.item6": "Merger Models",
+  "servicespage.cta": "Ready to Achieve Your Strategic Goals?",
+  "servicespage.cta.desc": "Let's discuss how we can help you achieve your strategic objectives and create lasting value for your business.",
 };

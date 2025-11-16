@@ -133,4 +133,6 @@ export const pt = {
   "servicespage.modeling.item4": "Modelos de Previsão",
   "servicespage.modeling.item5": "Modelos LBO",
   "servicespage.modeling.item6": "Modelos de Fusão",
+  "servicespage.cta": "Pronto para Alcançar seus Objetivos Estratégicos?",
+  "servicespage.cta.desc": "Vamos discutir como podemos ajudá-lo a alcançar seus objetivos estratégicos e criar valor duradouro para o seu negócio.",
 };

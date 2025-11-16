@@ -375,8 +375,7 @@ const Services = () => {
               {t("servicespage.cta")}
             </h2>
             <p className="text-lg text-muted-foreground max-w-4xl font-body leading-relaxed mb-12 mx-auto text-center">
-              Let's discuss how we can help you achieve your strategic objectives and create lasting
-              value for your business.
+              {t("servicespage.cta.desc")}
             </p>
             <Button
               onClick={scrollToContact}
