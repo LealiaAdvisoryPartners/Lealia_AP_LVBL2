@@ -93,10 +93,12 @@ const Services = () => {
             <ServicesSellSide />
             <ServicesPerformance />
             <ServicesModeling />
-            <ServicesCTA />
           </main>
         </div>
       </section>
+
+      {/* CTA Section - Full width outside main container */}
+      <ServicesCTA />
     </>;
 };
 export default Services;

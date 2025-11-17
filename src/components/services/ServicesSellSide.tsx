@@ -26,24 +26,22 @@ export const ServicesSellSide = () => {
           {t("servicespage.sellside.desc")}
         </p>
 
-        <div className="bg-card rounded-lg p-8 shadow-[var(--shadow-elegant)]">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="bg-card rounded-lg p-6 shadow-[var(--shadow-elegant)]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {[
               { icon: FileText, label: t("servicespage.sellside.step1") },
               { icon: TrendingUp, label: t("servicespage.sellside.step2") },
               { icon: Target, label: t("servicespage.sellside.step3") },
               { icon: Search, label: t("servicespage.sellside.step4") },
               { icon: CheckCircle, label: t("servicespage.sellside.step5") },
-            ].map((step, index, arr) => (
-              <div key={step.label} className="flex items-center gap-6">
-                <div className="flex flex-col items-center text-center min-w-[140px]">
-                  <div className="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center mb-3">
-                    <step.icon className="w-8 h-8 text-primary" />
-                  </div>
-                  <p className="font-body font-medium text-sm text-foreground">{step.label}</p>
+            ].map((step, index) => (
+              <div key={step.label} className="flex flex-col items-center text-center">
+                <div className="w-14 h-14 rounded-full bg-primary/5 flex items-center justify-center mb-3">
+                  <step.icon className="w-7 h-7 text-primary" />
                 </div>
-                {index < arr.length - 1 && (
-                  <ArrowRight className="hidden md:block w-6 h-6 text-muted-foreground" />
+                <p className="font-body font-medium text-sm text-foreground">{step.label}</p>
+                {index < 4 && (
+                  <ArrowRight className="w-5 h-5 text-muted-foreground mt-4 rotate-90 lg:hidden" />
                 )}
               </div>
             ))}

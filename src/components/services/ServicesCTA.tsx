@@ -10,13 +10,13 @@ export const ServicesCTA = () => {
   };
 
   return (
-    <section className="mt-16 bg-secondary -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+    <section className="bg-secondary py-16 md:py-20">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-center"
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
       >
         <h2 className="text-3xl md:text-4xl font-heading font-semibold text-primary mb-6">
           {t("servicespage.cta")}

@@ -13,7 +13,7 @@ export const ServicesBuySide = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="buy-side" className="mb-16 bg-secondary -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+    <section id="buy-side" className="my-16 bg-secondary rounded-lg px-6 py-12 md:py-16">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -26,24 +26,22 @@ export const ServicesBuySide = () => {
           {t("servicespage.buyside.desc")}
         </p>
 
-        <div className="bg-card rounded-lg p-8 shadow-[var(--shadow-elegant)]">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="bg-card rounded-lg p-6 shadow-[var(--shadow-elegant)]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {[
               { icon: Target, label: t("servicespage.buyside.step1") },
               { icon: Search, label: t("servicespage.buyside.step2") },
               { icon: FileText, label: t("servicespage.buyside.step3") },
               { icon: TrendingUp, label: t("servicespage.buyside.step4") },
               { icon: CheckCircle, label: t("servicespage.buyside.step5") },
-            ].map((step, index, arr) => (
-              <div key={step.label} className="flex items-center gap-6">
-                <div className="flex flex-col items-center text-center min-w-[140px]">
-                  <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mb-3">
-                    <step.icon className="w-8 h-8 text-accent" />
-                  </div>
-                  <p className="font-body font-medium text-sm text-foreground">{step.label}</p>
+            ].map((step, index) => (
+              <div key={step.label} className="flex flex-col items-center text-center">
+                <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center mb-3">
+                  <step.icon className="w-7 h-7 text-accent" />
                 </div>
-                {index < arr.length - 1 && (
-                  <ArrowRight className="hidden md:block w-6 h-6 text-muted-foreground" />
+                <p className="font-body font-medium text-sm text-foreground">{step.label}</p>
+                {index < 4 && (
+                  <ArrowRight className="w-5 h-5 text-muted-foreground mt-4 rotate-90 lg:hidden" />
                 )}
               </div>
             ))}

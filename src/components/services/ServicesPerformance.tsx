@@ -5,7 +5,7 @@ export const ServicesPerformance = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="performance" className="mb-16 bg-secondary -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-16 md:py-20">
+    <section id="performance" className="my-16 bg-secondary rounded-lg px-6 py-12 md:py-16">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
