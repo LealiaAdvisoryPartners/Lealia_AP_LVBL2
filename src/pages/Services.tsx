@@ -71,26 +71,24 @@ const Services = () => {
         <img src={logoCircle} alt="" className="absolute -top-40 -right-40 w-[650px] h-[650px] opacity-35" />
       </motion.div>
 
-      {/* Layout with proper container margins */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="flex">
-          <ServicesSidebar
-            sections={sections}
-            activeSection={activeSection}
-            mobileNavOpen={mobileNavOpen}
-            setMobileNavOpen={setMobileNavOpen}
-            scrollToSection={scrollToSection}
-          />
+      {/* Layout */}
+      <div className="flex relative z-10">
+        <ServicesSidebar
+          sections={sections}
+          activeSection={activeSection}
+          mobileNavOpen={mobileNavOpen}
+          setMobileNavOpen={setMobileNavOpen}
+          scrollToSection={scrollToSection}
+        />
 
-          <main className="flex-1 lg:ml-64">
-            <ServicesOverview />
-            <ServicesBuySide />
-            <ServicesSellSide />
-            <ServicesPerformance />
-            <ServicesModeling />
-            <ServicesCTA />
-          </main>
-        </div>
+        <main className="flex-1 lg:ml-56">
+          <ServicesOverview />
+          <ServicesBuySide />
+          <ServicesSellSide />
+          <ServicesPerformance />
+          <ServicesModeling />
+          <ServicesCTA />
+        </main>
       </div>
     </>
   );

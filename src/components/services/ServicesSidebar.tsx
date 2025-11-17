@@ -65,7 +65,7 @@ export const ServicesSidebar = ({
       )}
 
       {/* DESKTOP SIDEBAR */}
-      <aside className="hidden lg:flex flex-col w-56 sticky top-28 h-[calc(100vh-7rem)] z-10 pr-4">
+      <aside className="hidden lg:flex flex-col w-56 fixed left-0 top-28 h-[calc(100vh-7rem)] z-10 pl-4">
         <motion.div
           initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 0 }}
