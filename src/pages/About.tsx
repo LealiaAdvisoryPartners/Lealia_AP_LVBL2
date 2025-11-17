@@ -1,17 +1,12 @@
 import { motion } from "framer-motion";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import aboutStory from "@/assets/about-story.jpg";
 import logoCircle from "@/assets/Logo_no_text_zoom_704x704.png";
 
 const About = () => {
   const { t } = useLanguage();
-  
+
   const whyUsItems = [
     {
       title: t("about.whyus.expertise"),
@@ -34,27 +29,20 @@ const About = () => {
   return (
     <>
       {/* Decorative Logo */}
-      <div className="absolute top-0 right-0 overflow-hidden pointer-events-none z-0 w-[650px] h-[650px]">
-        <img 
-          src={logoCircle} 
-          alt="" 
-          className="absolute -top-40 -right-40 w-[650px] h-[650px] opacity-35"
-        />
-      </div>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9, y: -20 }}
+        animate={{ opacity: 0.35, scale: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="absolute top-0 right-0 overflow-hidden pointer-events-none z-0 w-[650px] h-[650px]"
+      >
+        <img src={logoCircle} alt="" className="absolute -top-40 -right-40 w-[650px] h-[650px] opacity-35" />
+      </motion.div>
 
       {/* Introduction Section */}
       <section className="section-container relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-6">
-            {t("about.title")}
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-4xl font-body leading-relaxed">
-            {t("about.intro")}
-          </p>
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+          <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-6">{t("about.title")}</h1>
+          <p className="text-lg text-muted-foreground max-w-4xl font-body leading-relaxed">{t("about.intro")}</p>
         </motion.div>
       </section>
 
@@ -77,16 +65,11 @@ const About = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                 >
-                  <AccordionItem
-                    value={`item-${index}`}
-                    className="card-elegant px-6 border-0"
-                  >
+                  <AccordionItem value={`item-${index}`} className="card-elegant px-6 border-0">
                     <AccordionTrigger className="text-lg font-heading font-semibold text-primary hover:text-accent">
                       {item.title}
                     </AccordionTrigger>
-                    <AccordionContent className="text-muted-foreground font-body pt-2">
-                      {item.content}
-                    </AccordionContent>
+                    <AccordionContent className="text-muted-foreground font-body pt-2">{item.content}</AccordionContent>
                   </AccordionItem>
                 </motion.div>
               ))}
