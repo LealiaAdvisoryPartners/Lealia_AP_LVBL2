@@ -1,12 +1,11 @@
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
-import React from "react";
 import {
   ArrowRight,
+  Search,
+  Target,
   FileText,
   TrendingUp,
-  Target,
-  Search,
   CheckCircle,
 } from "lucide-react";
 
@@ -28,7 +27,7 @@ export const ServicesSellSide = () => {
         </p>
 
         <div className="bg-card rounded-lg p-6 shadow-[var(--shadow-elegant)]">
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {[
               { icon: FileText, label: t("servicespage.sellside.step1") },
               { icon: TrendingUp, label: t("servicespage.sellside.step2") },
@@ -36,17 +35,15 @@ export const ServicesSellSide = () => {
               { icon: Search, label: t("servicespage.sellside.step4") },
               { icon: CheckCircle, label: t("servicespage.sellside.step5") },
             ].map((step, index) => (
-              <React.Fragment key={step.label}>
-                <div className="flex flex-col items-center text-center">
-                  <div className="w-14 h-14 rounded-full bg-primary/5 flex items-center justify-center mb-3">
-                    <step.icon className="w-7 h-7 text-primary" />
-                  </div>
-                  <p className="font-body font-medium text-sm text-foreground">{step.label}</p>
+              <div key={step.label} className="flex flex-col items-center text-center">
+                <div className="w-14 h-14 rounded-full bg-primary/5 flex items-center justify-center mb-3">
+                  <step.icon className="w-7 h-7 text-primary" />
                 </div>
+                <p className="font-body font-medium text-sm text-foreground">{step.label}</p>
                 {index < 4 && (
-                  <ArrowRight className="w-6 h-6 text-primary/40 flex-shrink-0 rotate-90 lg:rotate-0" />
+                  <ArrowRight className="w-5 h-5 text-muted-foreground mt-4 rotate-90 lg:hidden" />
                 )}
-              </React.Fragment>
+              </div>
             ))}
           </div>
         </div>
