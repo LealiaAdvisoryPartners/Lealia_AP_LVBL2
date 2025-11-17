@@ -61,9 +61,14 @@ const Services = () => {
   return (
     <>
       {/* Decorative Logo - page root level */}
-      <div className="absolute top-0 right-0 overflow-hidden pointer-events-none z-0 w-[650px] h-[650px]">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9, y: -20 }}
+        animate={{ opacity: 0.35, scale: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="absolute top-0 right-0 overflow-hidden pointer-events-none z-0 w-[650px] h-[650px]"
+      >
         <img src={logoCircle} alt="" className="absolute -top-40 -right-40 w-[650px] h-[650px] opacity-35" />
-      </div>
+      </motion.div>
 
       {/* Layout */}
       <div className="flex relative z-10">

@@ -8,7 +8,7 @@ import logoCircle from "@/assets/Logo_no_text_zoom_704x704.png";
 
 const Team = () => {
   const { t } = useLanguage();
-  
+
   const teamMembers = [
     {
       id: "john-anderson",
@@ -29,7 +29,7 @@ const Team = () => {
       bio: [t("teampage.bio2.p1"), t("teampage.bio2.p2"), t("teampage.bio2.p3"), t("teampage.bio2.p4")],
     },
   ];
-  
+
   const scrollToContact = () => {
     window.location.href = "/#contact";
   };
@@ -37,27 +37,20 @@ const Team = () => {
   return (
     <>
       {/* Decorative Logo */}
-      <div className="absolute top-0 right-0 overflow-hidden pointer-events-none z-0 w-[650px] h-[650px]">
-        <img 
-          src={logoCircle} 
-          alt="" 
-          className="absolute -top-40 -right-40 w-[650px] h-[650px] opacity-35"
-        />
-      </div>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9, y: -20 }}
+        animate={{ opacity: 0.35, scale: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="absolute top-0 right-0 overflow-hidden pointer-events-none z-0 w-[650px] h-[650px]"
+      >
+        <img src={logoCircle} alt="" className="absolute -top-40 -right-40 w-[650px] h-[650px] opacity-35" />
+      </motion.div>
 
       {/* Header Section */}
       <section className="section-container pb-12 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-6">
-            {t("teampage.title")}
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-4xl font-body leading-relaxed">
-            {t("teampage.intro")}
-          </p>
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+          <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-6">{t("teampage.title")}</h1>
+          <p className="text-lg text-muted-foreground max-w-4xl font-body leading-relaxed">{t("teampage.intro")}</p>
         </motion.div>
       </section>
 
@@ -72,9 +65,7 @@ const Team = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className={`grid grid-cols-1 lg:grid-cols-3 gap-12 ${
-                !isEven ? "lg:grid-flow-col-dense" : ""
-              }`}
+              className={`grid grid-cols-1 lg:grid-cols-3 gap-12 ${!isEven ? "lg:grid-flow-col-dense" : ""}`}
             >
               {/* EVEN (image left) */}
               {isEven ? (
@@ -85,11 +76,19 @@ const Team = () => {
                     </div>
 
                     <div className="flex gap-4">
-                      <a href={`mailto:${member.email}`} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors">
+                      <a
+                        href={`mailto:${member.email}`}
+                        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
+                      >
                         <Mail className="w-5 h-5" />
                         <span className="font-body">{member.email}</span>
                       </a>
-                      <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors">
+                      <a
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
+                      >
                         <Linkedin className="w-5 h-5" />
                       </a>
                     </div>
@@ -102,7 +101,9 @@ const Team = () => {
                     </div>
 
                     <div className="space-y-4 font-body text-muted-foreground leading-relaxed">
-                      {member.bio.map((paragraph, idx) => <p key={idx}>{paragraph}</p>)}
+                      {member.bio.map((paragraph, idx) => (
+                        <p key={idx}>{paragraph}</p>
+                      ))}
                     </div>
                   </div>
                 </>
@@ -116,7 +117,9 @@ const Team = () => {
                     </div>
 
                     <div className="space-y-4 font-body text-muted-foreground leading-relaxed">
-                      {member.bio.map((paragraph, idx) => <p key={idx}>{paragraph}</p>)}
+                      {member.bio.map((paragraph, idx) => (
+                        <p key={idx}>{paragraph}</p>
+                      ))}
                     </div>
                   </div>
 
@@ -126,11 +129,19 @@ const Team = () => {
                     </div>
 
                     <div className="flex gap-4">
-                      <a href={`mailto:${member.email}`} className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors">
+                      <a
+                        href={`mailto:${member.email}`}
+                        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
+                      >
                         <Mail className="w-5 h-5" />
                         <span className="font-body">{member.email}</span>
                       </a>
-                      <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors">
+                      <a
+                        href={member.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
+                      >
                         <Linkedin className="w-5 h-5" />
                       </a>
                     </div>
