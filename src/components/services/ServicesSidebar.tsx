@@ -36,7 +36,11 @@ export const ServicesSidebar = ({
           <div className="absolute left-0 top-0 w-64 h-full bg-background border-r border-border p-6 shadow-xl">
             <div className="flex justify-between items-center mb-6">
               <h3 className="font-heading text-lg font-semibold">{t("servicespage.nav")}</h3>
-              <button onClick={() => setMobileNavOpen(false)} aria-label="Close navigation" className="p-1">
+              <button
+                onClick={() => setMobileNavOpen(false)}
+                aria-label="Close navigation"
+                className="p-1"
+              >
                 <X className="w-5 h-5 text-muted-foreground" />
               </button>
             </div>
@@ -61,7 +65,7 @@ export const ServicesSidebar = ({
       )}
 
       {/* DESKTOP SIDEBAR */}
-      <aside className="hidden lg:flex flex-col w-56 sticky top-28 self-start z-10 pl-4">
+      <aside className="hidden lg:flex flex-col w-56 fixed left-0 top-28 h-[calc(100vh-7rem)] z-10 pl-4">
         <motion.div
           initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 0 }}

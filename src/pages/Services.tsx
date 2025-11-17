@@ -72,7 +72,7 @@ const Services = () => {
       </motion.div>
 
       {/* Layout */}
-      <div className="section-container relative z-10 flex">
+      <div className="flex relative z-10">
         <ServicesSidebar
           sections={sections}
           activeSection={activeSection}
