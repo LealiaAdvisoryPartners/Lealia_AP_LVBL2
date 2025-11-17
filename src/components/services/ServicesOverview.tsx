@@ -4,7 +4,7 @@ export const ServicesOverview = () => {
   const {
     t
   } = useLanguage();
-  return <section id="overview" className="section-container">
+  return <section id="overview" className="mb-16">
       <motion.div initial={{
       opacity: 0,
       y: 20
@@ -13,20 +13,20 @@ export const ServicesOverview = () => {
       y: 0
     }} transition={{
       duration: 0.6
-    }} className="my-0 py-0">
+    }}>
         <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-6">
           {t("servicespage.overview.title")}
         </h1>
 
-        <p className="text-lg text-muted-foreground max-w-4xl font-body leading-relaxed mb-4">
+        <p className="text-lg text-muted-foreground font-body leading-relaxed mb-4">
           {t("servicespage.overview.p1")}
         </p>
 
-        <p className="text-lg text-muted-foreground max-w-4xl font-body leading-relaxed mb-4 my-0">
+        <p className="text-lg text-muted-foreground font-body leading-relaxed mb-4">
           {t("servicespage.overview.p2")}
         </p>
 
-        <p className="text-lg text-muted-foreground max-w-4xl font-body leading-relaxed my-0 py-[20px]">
+        <p className="text-lg text-muted-foreground font-body leading-relaxed">
           {t("servicespage.overview.p3")}
         </p>
       </motion.div>

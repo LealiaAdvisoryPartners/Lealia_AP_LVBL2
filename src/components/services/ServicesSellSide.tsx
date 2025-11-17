@@ -13,16 +13,16 @@ export const ServicesSellSide = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="sell-side" className="section-container">
+    <section id="sell-side" className="mb-16">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="section-title mb-6">{t("servicespage.sellside.title")}</h2>
+        <h2 className="text-3xl md:text-4xl font-heading font-semibold text-primary mb-6">{t("servicespage.sellside.title")}</h2>
 
-        <p className="text-lg text-muted-foreground max-w-4xl font-body leading-relaxed mb-12">
+        <p className="text-lg text-muted-foreground font-body leading-relaxed mb-12">
           {t("servicespage.sellside.desc")}
         </p>
 

@@ -83,12 +83,12 @@ const Services = () => {
       </motion.div>
 
       {/* Page Layout */}
-      <section className="section-container relative z-10">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative z-10">
         <div className="flex gap-8">
           <ServicesSidebar sections={sections} activeSection={activeSection} mobileNavOpen={mobileNavOpen} setMobileNavOpen={setMobileNavOpen} scrollToSection={scrollToSection} />
 
-          <main className="flex-1">
-            <ServicesOverview className="py-0" />
+          <main className="flex-1 max-w-4xl">
+            <ServicesOverview />
             <ServicesBuySide />
             <ServicesSellSide />
             <ServicesPerformance />

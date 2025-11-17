@@ -13,16 +13,16 @@ export const ServicesBuySide = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="buy-side" className="section-container bg-secondary">
+    <section id="buy-side" className="mb-16 bg-secondary -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-16 md:py-20">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="section-title mb-6">{t("servicespage.buyside.title")}</h2>
+        <h2 className="text-3xl md:text-4xl font-heading font-semibold text-primary mb-6">{t("servicespage.buyside.title")}</h2>
 
-        <p className="text-lg text-muted-foreground max-w-4xl font-body leading-relaxed mb-12">
+        <p className="text-lg text-muted-foreground font-body leading-relaxed mb-12">
           {t("servicespage.buyside.desc")}
         </p>
 
