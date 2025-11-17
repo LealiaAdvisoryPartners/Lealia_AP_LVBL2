@@ -10,7 +10,7 @@ export const ServicesCTA = () => {
   };
 
   return (
-    <section className="section-container bg-secondary">
+    <section className="mt-16 bg-secondary -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-16 md:py-20">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -18,10 +18,10 @@ export const ServicesCTA = () => {
         transition={{ duration: 0.6 }}
         className="text-center"
       >
-        <h2 className="text-3xl md:text-4xl font-heading font-semibold mb-6">
+        <h2 className="text-3xl md:text-4xl font-heading font-semibold text-primary mb-6">
           {t("servicespage.cta")}
         </h2>
-        <p className="text-lg text-muted-foreground max-w-4xl font-body leading-relaxed mb-12 mx-auto text-center">
+        <p className="text-lg text-muted-foreground font-body leading-relaxed mb-12 mx-auto text-center">
           {t("servicespage.cta.desc")}
         </p>
         <Button
