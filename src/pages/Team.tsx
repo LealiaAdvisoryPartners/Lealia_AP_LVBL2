@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Mail, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -8,6 +9,16 @@ import logoCircle from "@/assets/Logo_no_text_zoom_704x704.png";
 
 const Team = () => {
   const { t } = useLanguage();
+
+  // Track desktop viewport width
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const checkDesktop = () => setIsDesktop(window.innerWidth >= 1024);
+    checkDesktop();
+    window.addEventListener("resize", checkDesktop);
+    return () => window.removeEventListener("resize", checkDesktop);
+  }, []);
 
   const teamMembers = [
     {
@@ -30,21 +41,23 @@ const Team = () => {
     },
   ];
 
-  const scrollToContact = () => {
-    window.location.href = "/#contact";
-  };
-
   return (
     <>
-      {/* Decorative Logo */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9, y: -20 }}
-        animate={{ opacity: 0.35, scale: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="absolute top-0 right-0 overflow-hidden pointer-events-none z-0 w-[650px] h-[650px]"
-      >
-        <img src={logoCircle} alt="" className="absolute -top-40 -right-40 w-[650px] h-[650px] opacity-35" />
-      </motion.div>
+      {/* Decorative Logo only on desktop */}
+      {isDesktop && (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9, y: -20 }}
+          animate={{ opacity: 0.35, scale: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="absolute top-0 right-0 overflow-hidden pointer-events-none z-0 w-[650px] h-[650px]"
+        >
+          <img
+            src={logoCircle}
+            alt=""
+            className="absolute -top-40 -right-40 w-[650px] h-[650px] opacity-35"
+          />
+        </motion.div>
+      )}
 
       {/* Header Section */}
       <section className="section-container pb-12 relative z-10">
