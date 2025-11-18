@@ -8,9 +8,9 @@ const Index = () => {
   return (
     <>
       <Hero />
-      <CoreValues />
-      <TeamPreview />
       <ServicesOverview />
+      <TeamPreview />
+      <CoreValues />
       <ContactForm />
     </>
   );
