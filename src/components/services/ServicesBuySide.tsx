@@ -27,7 +27,7 @@ export const ServicesBuySide = () => {
         </p>
 
         <div className="bg-card rounded-lg p-6 shadow-[var(--shadow-elegant)]">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
             {[
               { icon: Target, label: t("servicespage.buyside.step1") },
               { icon: Search, label: t("servicespage.buyside.step2") },
@@ -41,7 +41,7 @@ export const ServicesBuySide = () => {
                 </div>
                 <p className="font-body font-medium text-sm text-foreground">{step.label}</p>
                 {index < 4 && (
-                  <ArrowRight className="w-5 h-5 text-muted-foreground mt-4 rotate-90 lg:hidden" />
+                  <ArrowRight className="w-5 h-5 text-muted-foreground mt-4 rotate-90 md:hidden" />
                 )}
               </div>
             ))}
