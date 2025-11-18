@@ -53,7 +53,7 @@ const Hero = () => {
           style={{ height: "auto" }}
         />
         <p
-          className="text-gray-400 font-body max-w-3xl mx-auto"
+          className="text-primary font-heading max-w-2xl mx-auto"
           style={{ fontSize: "clamp(1rem, 2.5vw, 1.5rem)" }}
         >
           {t("hero.tagline")}
