@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import heroBg from "@/assets/hero_try.png";
@@ -5,15 +6,33 @@ import logo from "@/assets/logo.png";
 
 const Hero = () => {
   const { t } = useLanguage();
+  const [bgPositionY, setBgPositionY] = useState(35);
+
+  useEffect(() => {
+    const updateBgPosition = () => {
+      const vh = window.innerHeight;
+      if (vh < 650) {
+        setBgPositionY(5);
+      } else if (vh < 800) {
+        setBgPositionY(5);
+      } else {
+        setBgPositionY(35);
+      }
+    };
+
+    updateBgPosition();
+    window.addEventListener("resize", updateBgPosition);
+    return () => window.removeEventListener("resize", updateBgPosition);
+  }, []);
   
   return (
-    <section className="relative min-h-screen flex items-start justify-center pt-48 overflow-hidden">
+    <section className="relative min-h-screen flex items-start justify-center pt-36 overflow-hidden">
       {/* Background Image with Gradient to Section Bg Color */}
       <div
         className="absolute inset-0 z-0 bg-cover bg-center"
         style={{
           backgroundImage: `url(${heroBg})`,
-          backgroundPosition: "50% 65%",
+          backgroundPosition: `50% ${bgPositionY}%`,
         }}
       >
         {/* Bottom Fade Gradient */}
@@ -30,7 +49,7 @@ const Hero = () => {
         <img
           src={logo}
           alt="Lealia Advisory Partners"
-          className="w-full max-w-2xl mx-auto mb-6"
+          className="w-full max-w-3xl mx-auto mb-6"
           style={{ height: "auto" }}
         />
         <p
