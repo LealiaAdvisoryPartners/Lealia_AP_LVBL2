@@ -56,9 +56,17 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="border-t border-primary-foreground/20 pt-8">
-          <p className="text-sm text-primary-foreground/60 text-center">
-            © {currentYear} Lealia Advisory Partners. {t("footer.copyright")}
-          </p>
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-primary-foreground/60">
+              © {currentYear} Lealia Advisory Partners. {t("footer.copyright")}
+            </p>
+            <Link
+              to="/privacy"
+              className="text-sm text-primary-foreground/60 hover:text-accent transition-colors"
+            >
+              {t("footer.privacy")}
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
