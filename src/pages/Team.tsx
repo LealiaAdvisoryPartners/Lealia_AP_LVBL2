@@ -177,7 +177,7 @@ const Team = () => {
         >
           <h2 className="text-3xl md:text-4xl font-heading font-semibold mb-6">{t("teampage.cta")}</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-body leading-relaxed mb-8">
-            We'd love to hear from you and discuss how we can help your business achieve its strategic goals.
+            {t("teampage.cta.desc")}
           </p>
           <Button
             onClick={() => (window.location.href = "/#contact")}

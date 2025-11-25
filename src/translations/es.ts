@@ -97,7 +97,7 @@ export const es = {
   "about.story.p1": "Lealia Advisory Partners fue fundada con una visión clara: crear una firma de asesoría boutique que combine el rigor y la experiencia de las grandes instituciones con el servicio personalizado y el espíritu emprendedor de una firma más pequeña.",
   "about.story.p2": "Nuestros socios fundadores, habiendo trabajado juntos durante años en instituciones globales líderes, reconocieron una brecha en el mercado. Las empresas de tamaño medio y orientadas al crecimiento a menudo luchaban para acceder al mismo nivel de servicios de asesoría estratégica disponibles para las grandes corporaciones. Al mismo tiempo, muchas firmas se habían vuelto demasiado orientadas a procesos, perdiendo el toque personal y la resolución creativa de problemas que son esenciales para transacciones exitosas.",
   "about.story.p3": "Establecimos Lealia para abordar estos desafíos. Nuestro nombre refleja nuestra filosofía central: 'Lealia' deriva de 'lealtad' y 'alianza', enfatizando nuestro compromiso de construir asociaciones duraderas con nuestros clientes. Creemos que los mejores resultados se logran cuando los asesores están verdaderamente alineados con el éxito de sus clientes.",
-  "about.story.p4": "Desde nuestra fundación, hemos tenido el privilegio de trabajar con empresarios excepcionales, líderes empresariales e inversionistas. Cada compromiso ha reforzado nuestra creencia de que la estrategia reflexiva, el análisis riguroso y la asociación genuina son las claves para crear valor duradero. Esperamos continuar este viaje y ayudar a más empresas a alcanzar sus objetivos estratégicos.",
+  "about.servicesLink": "Llévame a Servicios",
   
   // Team Page
   "teampage.title": "Conozca Nuestro Equipo",
@@ -112,6 +112,7 @@ export const es = {
   "teampage.bio2.p3": "Sarah obtuvo su MBA de Stanford Graduate School of Business y tiene una licenciatura en Ingeniería del MIT. Es Consultora de Gestión Certificada (CMC) y ha publicado varios artículos sobre mejores prácticas de mejora del rendimiento.",
   "teampage.bio2.p4": "El enfoque colaborativo y la perspicacia analítica de Sarah le permiten identificar rápidamente oportunidades y desarrollar estrategias prácticas e implementables. Le apasiona asociarse con clientes para lograr resultados transformadores y construir capacidades organizacionales duraderas.",
   "teampage.cta": "¿Listo para Trabajar Juntos?",
+  "teampage.cta.desc": "Nos encantaría saber de usted y discutir cómo podemos ayudar a su negocio a alcanzar sus objetivos estratégicos.",
   
   // Services Page
   "servicespage.nav": "Nuestros Servicios",
@@ -151,9 +152,13 @@ export const es = {
   "servicespage.modeling.title": "Modelado Financiero",
   "servicespage.modeling.desc": "Nuestra experiencia en modelado financiero proporciona a los clientes herramientas analíticas sofisticadas para la toma de decisiones estratégicas. Construimos modelos robustos y flexibles que le permiten evaluar escenarios, evaluar riesgos y tomar decisiones empresariales informadas.",
   "servicespage.modeling.item1": "Modelos de Valoración",
+  "servicespage.modeling.item1.desc": "Planes de negocio integrales que incluyen análisis de mercado, proyecciones financieras y hojas de ruta estratégicas",
   "servicespage.modeling.item2": "Modelos de Transacción",
+  "servicespage.modeling.item2.desc": "DCF, análisis de empresas comparables, transacciones precedentes",
   "servicespage.modeling.item3": "Análisis de Escenarios",
+  "servicespage.modeling.item3.desc": "Análisis detallado de viabilidad del proyecto, potencial de mercado y retornos de inversión",
   "servicespage.modeling.item4": "Modelos de Pronóstico",
+  "servicespage.modeling.item4.desc": "Pronósticos detallados de ingresos, gastos y flujos de efectivo",
   "servicespage.modeling.item5": "Modelos LBO",
   "servicespage.modeling.item6": "Modelos de Fusión",
   "servicespage.cta": "¿Listo para Alcanzar tus Objetivos Estratégicos?",

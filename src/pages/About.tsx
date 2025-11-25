@@ -124,7 +124,7 @@ const About = () => {
               <p>{t("about.story.p1")}</p>
               <p>{t("about.story.p2")}</p>
               <p>{t("about.story.p3")}</p>
-              <p>{t("about.story.p4")}</p>
+              {/* <p>{t("about.story.p4")}</p> */}
             </div>
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
@@ -153,7 +153,7 @@ const About = () => {
               href="/services"
               className="inline-flex items-center text-primary font-semibold text-lg hover:text-accent transition-colors"
             >
-              Take me to Services
+              {t("about.servicesLink")}
               <svg
                 className="ml-2 w-6 h-6"
                 fill="none"

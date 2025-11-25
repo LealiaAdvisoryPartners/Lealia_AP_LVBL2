@@ -22,19 +22,19 @@ export const ServicesModeling = () => {
           {[
             {
               title: t("servicespage.modeling.item1"),
-              desc: "DCF, comparable company analysis, precedent transactions",
+              desc: t("servicespage.modeling.item1.desc"),
             },
             {
               title: t("servicespage.modeling.item2"),
-              desc: "Detailed forecasts of revenue, expenses, and cash flows",
+              desc: t("servicespage.modeling.item2.desc"),
             },
             {
               title: t("servicespage.modeling.item3"),
-              desc: "Stress testing and sensitivity analysis for key assumptions",
+              desc: t("servicespage.modeling.item3.desc"),
             },
             {
               title: t("servicespage.modeling.item4"),
-              desc: "ROI, IRR, and payback period calculations",
+              desc: t("servicespage.modeling.item4.desc"),
             },
           ].map((type, index) => (
             <motion.div
