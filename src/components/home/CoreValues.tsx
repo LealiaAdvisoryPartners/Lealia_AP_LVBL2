@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Shield, Award, Handshake, Lightbulb } from "lucide-react";
+import { Puzzle, BookOpen, Network, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -9,22 +9,22 @@ const CoreValues = () => {
   
   const values = [
     {
-      icon: Shield,
+      icon: Puzzle,
       title: t("values.integrity"),
       description: t("values.integrity.desc"),
     },
     {
-      icon: Award,
+      icon: BookOpen,
       title: t("values.excellence"),
       description: t("values.excellence.desc"),
     },
     {
-      icon: Handshake,
+      icon: Network,
       title: t("values.partnership"),
       description: t("values.partnership.desc"),
     },
     {
-      icon: Lightbulb,
+      icon: Users,
       title: t("values.innovation"),
       description: t("values.innovation.desc"),
     },

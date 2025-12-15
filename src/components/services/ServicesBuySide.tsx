@@ -3,10 +3,10 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import {
   ArrowRight,
   Search,
-  Target,
-  FileText,
-  TrendingUp,
-  CheckCircle,
+  Compass,
+  Calculator,
+  ClipboardCheck,
+  Handshake,
 } from "lucide-react";
 
 export const ServicesBuySide = () => {
@@ -29,11 +29,11 @@ export const ServicesBuySide = () => {
         <div className="bg-card rounded-lg p-6 shadow-[var(--shadow-elegant)]">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
             {[
-              { icon: Target, label: t("servicespage.buyside.step1") },
+              { icon: Compass, label: t("servicespage.buyside.step1") },
               { icon: Search, label: t("servicespage.buyside.step2") },
-              { icon: FileText, label: t("servicespage.buyside.step3") },
-              { icon: TrendingUp, label: t("servicespage.buyside.step4") },
-              { icon: CheckCircle, label: t("servicespage.buyside.step5") },
+              { icon: Calculator, label: t("servicespage.buyside.step3") },
+              { icon: ClipboardCheck, label: t("servicespage.buyside.step4") },
+              { icon: Handshake, label: t("servicespage.buyside.step5") },
             ].map((step, index) => (
               <div key={step.label} className="flex flex-col items-center text-center">
                 <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center mb-3">
