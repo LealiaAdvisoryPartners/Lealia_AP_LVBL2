@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 import { useLanguage } from "@/contexts/LanguageContext";
 import {
   ArrowRight,
-  Search,
+  ClipboardCheck,
   Target,
   FileText,
-  TrendingUp,
-  CheckCircle,
+  DollarSign,
+  Handshake,
 } from "lucide-react";
 
 export const ServicesSellSide = () => {
@@ -30,10 +30,10 @@ export const ServicesSellSide = () => {
           <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
             {[
               { icon: FileText, label: t("servicespage.sellside.step1") },
-              { icon: TrendingUp, label: t("servicespage.sellside.step2") },
+              { icon: DollarSign, label: t("servicespage.sellside.step2") },
               { icon: Target, label: t("servicespage.sellside.step3") },
-              { icon: Search, label: t("servicespage.sellside.step4") },
-              { icon: CheckCircle, label: t("servicespage.sellside.step5") },
+              { icon: ClipboardCheck, label: t("servicespage.sellside.step4") },
+              { icon: Handshake, label: t("servicespage.sellside.step5") },
             ].map((step, index) => (
               <div key={step.label} className="flex flex-col items-center text-center">
                 <div className="w-14 h-14 rounded-full bg-primary/5 flex items-center justify-center mb-3">

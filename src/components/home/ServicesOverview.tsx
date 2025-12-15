@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { TrendingUp, BarChart, Calculator } from "lucide-react";
+import { Handshake, TrendingUp, Calculator } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -9,13 +9,13 @@ const ServicesOverview = () => {
   
   const services = [
     {
-      icon: TrendingUp,
+      icon: Handshake,
       title: t("services.ma"),
       description: t("services.ma.desc"),
       link: "/services#buy-side",
     },
     {
-      icon: BarChart,
+      icon: TrendingUp,
       title: t("services.performance"),
       description: t("services.performance.desc"),
       link: "/services#performance",
