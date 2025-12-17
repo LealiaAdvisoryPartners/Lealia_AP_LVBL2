@@ -32,8 +32,8 @@ export const en = {
   "services.ma.desc": "Comprehensive buy-side and sell-side advisory for strategic transactions",
   "services.performance": "Performance Improvement",
   "services.performance.desc": "Operational optimization and strategic enhancement initiatives",
-  "services.modeling": "Other Services",
-  "services.modeling.desc": "Corporate finance services, including valuations, business plans, feasibility studies and more",
+  "services.modeling": "Corporate Finance",
+  "services.modeling.desc": "Valuations, business plans, feasibility studies and more",
   "services.cta": "Learn More About Our Services",
   
   // Contact Form
@@ -115,12 +115,12 @@ export const en = {
   "teampage.cta.desc": "Reach out to our team so we can answer any question and understando how we can help your business achieve its strategic goals.",
   
   // Services Page
-  "servicespage.nav": "Our Services",
+  "servicespage.nav": "Services",
   "servicespage.overview": "Overview",
   "servicespage.buyside": "M&A Buy-Side",
   "servicespage.sellside": "M&A Sell-Side",
   "servicespage.performance": "Performance Improvement",
-  "servicespage.modeling": "Modeling",
+  "servicespage.modeling": "More Services",
   "servicespage.overview.title": "Our Services",
   "servicespage.overview.p1": "At Lealia Advisory Partners, we offer comprehensive advisory services designed to help businesses navigate complex transactions, optimize performance, and achieve strategic growth objectives.",
   "servicespage.overview.p2": "Our expertise spans the full spectrum of M&A advisory, from buy-side and sell-side transactions to performance improvement, modeling and feasibility studies. We combine deep industry knowledge with rigorous analytical capabilities to deliver optimal returns to our clients.",
@@ -149,7 +149,7 @@ export const en = {
   "servicespage.performance.step3.desc": "Execute initiatives with your team",
   "servicespage.performance.step4": "Monitoring & Optimization",
   "servicespage.performance.step4.desc": "Track results and refine approach",
-  "servicespage.modeling.title": "Other Services",
+  "servicespage.modeling.title": "Corporate Finance",
   "servicespage.modeling.desc": "Our financial modeling expertise provides clients with sophisticated analytical tools for strategic decision-making. We build robust, flexible models that enable you to evaluate scenarios, assess risks, and make informed business decisions.",
   "servicespage.modeling.item1": "Business Plan",
   "servicespage.modeling.item1.desc": "Comprehensive business plans including modeling, financial projections & scenarios, and clear outputs for internal or external use",

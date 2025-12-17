@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Handshake, TrendingUp, Calculator } from "lucide-react";
+import { Handshake, TrendingUp, Building2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -21,7 +21,7 @@ const ServicesOverview = () => {
       link: "/services#performance",
     },
     {
-      icon: Calculator,
+      icon: Building2,
       title: t("services.modeling"),
       description: t("services.modeling.desc"),
       link: "/services#modeling",

@@ -32,8 +32,8 @@ export const es = {
   "services.ma.desc": "Asesoramiento integral buy-side y sell-side en transacciones estratégicas",
   "services.performance": "Mejora del Desempeño",
   "services.performance.desc": "Optimización operativa e iniciativas de mejora estratégica",
-  "services.modeling": "Otros Servicios",
-  "services.modeling.desc": "Servicios de corporate finance, incluyendo valoraciones, business plans, estudios de viabilidad y otros",
+  "services.modeling": "Corporate Finance",
+  "services.modeling.desc": "Valoraciones, business plans, estudios de viabilidad y otros",
   "services.cta": "Conozca Nuestros Servicios",
   
   // Contact Form
@@ -120,7 +120,7 @@ export const es = {
   "servicespage.buyside": "M&A Buy-Side",
   "servicespage.sellside": "M&A Sell-Side",
   "servicespage.performance": "Mejora del Desempeño",
-  "servicespage.modeling": "Otros Servicios",
+  "servicespage.modeling": "Más Servicios",
   "servicespage.overview.title": "Nuestros Servicios",
   "servicespage.overview.p1": "En Lealia Advisory Partners ofrecemos servicios de asesoramiento integral diseñados para ayudar a las empresas a gestionar transacciones complejas, optimizar su desempeño y alcanzar objetivos estratégicos de crecimiento.",
   "servicespage.overview.p2": "Nuestra experiencia abarca todo el espectro de M&A y corporate finance, desde procesos buy-side y sell-side hasta iniciativas de mejora de performance, estudios de viabilidad y análisis financiero.",
@@ -149,7 +149,7 @@ export const es = {
   "servicespage.performance.step3.desc": "Ejecución de iniciativas junto al equipo del cliente",
   "servicespage.performance.step4": "Seguimiento y Optimización",
   "servicespage.performance.step4.desc": "Monitorización de resultados y ajuste de la estrategia",
-  "servicespage.modeling.title": "Otros Servicios",
+  "servicespage.modeling.title": "Corporate Finance",
   "servicespage.modeling.desc": "Prestamos servicios de corporate finance que apoyan la toma de decisiones estratégicas, incluyendo valoración de empresas, planificación financiera, estructuración de operaciones y análisis de escenarios.",
   "servicespage.modeling.item1": "Business Plans",
   "servicespage.modeling.item1.desc": "Elaboración de business plans completos, incluyendo modelización financiera, proyecciones y análisis de escenarios.",
