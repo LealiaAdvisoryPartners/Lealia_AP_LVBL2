@@ -150,7 +150,7 @@ export const en = {
   "servicespage.performance.step4": "Monitoring & Optimization",
   "servicespage.performance.step4.desc": "Track results and refine approach",
   "servicespage.modeling.title": "Corporate Finance",
-  "servicespage.modeling.desc": "Our financial modeling expertise provides clients with sophisticated analytical tools for strategic decision-making. We build robust, flexible models that enable you to evaluate scenarios, assess risks, and make informed business decisions.",
+  "servicespage.modeling.desc": "Our experience in corporate finance enables us to support clients in complex strategic and financial decisions. We provide advisory services in financial planning, business valuation, transaction structuring, and strategic analysis, leveraging rigorous analytical tools that support the creation of sustainable value.",
   "servicespage.modeling.item1": "Business Plan",
   "servicespage.modeling.item1.desc": "Comprehensive business plans including modeling, financial projections & scenarios, and clear outputs for internal or external use",
   "servicespage.modeling.item2": "Valuation",
