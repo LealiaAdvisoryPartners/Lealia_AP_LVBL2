@@ -26,7 +26,8 @@ const Team = () => {
       name: "Ricardo Nascimento Ferreira",
       role: t("teampage.role"),
       email: "j.anderson@lealia.com",
-      linkedin: "https://linkedin.com",
+      linkedin: "https://linkedin.com/in/ricardonascimentoferreira",
+      linkedinPath: "/ricardonascimentoferreira",
       image: teamMember1,
       bio: [t("teampage.bio1.p1"), t("teampage.bio1.p2"), t("teampage.bio1.p3"), t("teampage.bio1.p4")],
     },
@@ -35,7 +36,8 @@ const Team = () => {
       name: "Duarte Rocha Pereira",
       role: t("teampage.role"),
       email: "s.mitchell@lealia.com",
-      linkedin: "https://linkedin.com",
+      linkedin: "https://linkedin.com/in/duarterochapereira",
+      linkedinPath: "/duarterochapereira",
       image: teamMember2,
       bio: [t("teampage.bio2.p1"), t("teampage.bio2.p2"), t("teampage.bio2.p3"), t("teampage.bio2.p4")],
     },
@@ -78,7 +80,7 @@ const Team = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className={`grid grid-cols-1 lg:grid-cols-3 gap-12 ${!isEven ? "lg:grid-flow-col-dense" : ""}`}
+              className={`grid grid-cols-1 sm:grid-cols-3 gap-12 ${!isEven ? "sm:grid-flow-col-dense" : ""}`}
             >
               {/* EVEN (image left) */}
               {isEven ? (
@@ -88,13 +90,13 @@ const Team = () => {
                       <img src={member.image} alt={member.name} className="w-full aspect-square object-cover" />
                     </div>
 
-                    <div className="flex gap-4">
+                    <div className="flex flex-col gap-4">
                       <a
                         href={`mailto:${member.email}`}
                         className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
                       >
-                        <Mail className="w-5 h-5" />
-                        <span className="font-body">{member.email}</span>
+                        <Mail className="w-5 h-5 flex-shrink-0" />
+                        <span className="font-body break-all">{member.email}</span>
                       </a>
                       <a
                         href={member.linkedin}
@@ -102,12 +104,13 @@ const Team = () => {
                         rel="noopener noreferrer"
                         className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
                       >
-                        <Linkedin className="w-5 h-5" />
+                        <Linkedin className="w-5 h-5 flex-shrink-0" />
+                        <span className="font-body">{member.linkedinPath}</span>
                       </a>
                     </div>
                   </div>
 
-                  <div className="lg:col-span-2 space-y-6">
+                  <div className="sm:col-span-2 space-y-6">
                     <div>
                       <h2 className="text-3xl font-heading font-bold text-primary mb-2">{member.name}</h2>
                       <p className="text-lg font-heading text-accent">{member.role}</p>
@@ -123,7 +126,7 @@ const Team = () => {
               ) : (
                 <>
                   {/* ODD (image right) */}
-                  <div className="lg:col-span-2 space-y-6 order-last lg:order-first">
+                  <div className="sm:col-span-2 space-y-6 order-last sm:order-first">
                     <div>
                       <h2 className="text-3xl font-heading font-bold text-primary mb-2">{member.name}</h2>
                       <p className="text-lg font-heading text-accent">{member.role}</p>
@@ -136,18 +139,18 @@ const Team = () => {
                     </div>
                   </div>
 
-                  <div className="space-y-6 order-first lg:order-last">
+                  <div className="space-y-6 order-first sm:order-last">
                     <div className="relative overflow-hidden rounded-md shadow-[var(--shadow-elegant)]">
                       <img src={member.image} alt={member.name} className="w-full aspect-square object-cover" />
                     </div>
 
-                    <div className="flex gap-4">
+                    <div className="flex flex-col gap-4">
                       <a
                         href={`mailto:${member.email}`}
                         className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
                       >
-                        <Mail className="w-5 h-5" />
-                        <span className="font-body">{member.email}</span>
+                        <Mail className="w-5 h-5 flex-shrink-0" />
+                        <span className="font-body break-all">{member.email}</span>
                       </a>
                       <a
                         href={member.linkedin}
@@ -155,7 +158,8 @@ const Team = () => {
                         rel="noopener noreferrer"
                         className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
                       >
-                        <Linkedin className="w-5 h-5" />
+                        <Linkedin className="w-5 h-5 flex-shrink-0" />
+                        <span className="font-body">{member.linkedinPath}</span>
                       </a>
                     </div>
                   </div>
