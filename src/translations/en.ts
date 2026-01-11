@@ -7,7 +7,7 @@ export const en = {
   "nav.contact": "Contact Us",
   
   // Hero
-  "hero.tagline": "Strategic Advisory for Transformative Outcomes",
+  "hero.tagline": "M&A Advisory & Strategic Consulting",
   
   // Core Values
   "values.title": "Our Foundation",

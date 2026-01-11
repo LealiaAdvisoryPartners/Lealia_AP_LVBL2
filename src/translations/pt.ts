@@ -7,7 +7,7 @@ export const pt = {
   "nav.contact": "Contacte-nos",
 
   // Hero
-  "hero.tagline": "Assessoria estratégica para resultados transformadores",
+  "hero.tagline": "M&A e Consultoria Estratégica",
 
   // Valores Fundamentais
   "values.title": "A Nossa Base",
