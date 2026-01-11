@@ -3,7 +3,7 @@ import logo from "@/assets/logo.png";
 const Hero = () => {
   return (
     <section className="bg-white min-h-screen flex items-center justify-center relative">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full -mt-16 sm:-mt-20">
         <div className="flex flex-col items-center space-y-8">
           {/* Logo with Company Name */}
           <img
@@ -14,14 +14,14 @@ const Hero = () => {
           />
 
           {/* Services Text */}
-          <p className="text-muted-foreground text-lg sm:text-xl uppercase text-center font-cinzel" style={{ letterSpacing: '0.15em' }}>
+          <p className="text-muted-foreground text-sm sm:text-lg md:text-xl uppercase text-center font-cinzel" style={{ letterSpacing: '0.15em' }}>
             M&A ADVISORY & STRATEGIC CONSULTING
           </p>
         </div>
       </div>
 
       {/* Contact Information - Positioned at bottom corners */}
-      <div className="absolute bottom-16 sm:bottom-20 left-0 right-0 px-4 sm:px-6 lg:px-8 flex justify-between items-center text-muted-foreground text-lg sm:text-xl font-cinzel">
+      <div className="absolute bottom-16 sm:bottom-20 left-0 right-0 px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-center sm:justify-between items-center gap-3 sm:gap-0 text-muted-foreground text-sm sm:text-lg md:text-xl font-cinzel">
         <a
           href="mailto:GERAL@LEALIAAP.COM"
           className="hover:text-foreground transition-colors"
