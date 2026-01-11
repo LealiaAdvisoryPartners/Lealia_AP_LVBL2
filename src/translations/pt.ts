@@ -8,6 +8,7 @@ export const pt = {
 
   // Hero
   "hero.tagline": "Assessoria estratégica para resultados transformadores",
+  "hero.services": "ASSESSORIA M&A E CONSULTORIA ESTRATÉGICA",
 
   // Valores Fundamentais
   "values.title": "A Nossa Base",

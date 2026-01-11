@@ -1,6 +1,9 @@
 import logo from "@/assets/logo.png";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Hero = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="bg-white min-h-screen flex items-center justify-center relative">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full -mt-16 sm:-mt-20">
@@ -15,7 +18,7 @@ const Hero = () => {
 
           {/* Services Text */}
           <p className="text-muted-foreground text-sm sm:text-lg md:text-xl uppercase text-center font-cinzel" style={{ letterSpacing: '0.15em' }}>
-            M&A ADVISORY & STRATEGIC CONSULTING
+            {t("hero.services")}
           </p>
         </div>
       </div>

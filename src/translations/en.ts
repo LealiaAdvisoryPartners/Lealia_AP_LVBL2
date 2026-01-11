@@ -8,6 +8,7 @@ export const en = {
   
   // Hero
   "hero.tagline": "Strategic Advisory for Transformative Outcomes",
+  "hero.services": "M&A ADVISORY & STRATEGIC CONSULTING",
   
   // Core Values
   "values.title": "Our Foundation",

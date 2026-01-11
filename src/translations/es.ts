@@ -8,6 +8,7 @@ export const es = {
   
   // Hero
   "hero.tagline": "Asesoramiento Estratégico para Resultados Transformadores",
+  "hero.services": "ASESORAMIENTO M&A Y CONSULTORÍA ESTRATÉGICA",
   
   // Core Values
   "values.title": "Nuestros Principios",
