@@ -150,7 +150,7 @@ export const es = {
   "servicespage.performance.step4": "Seguimiento y Optimización",
   "servicespage.performance.step4.desc": "Monitorización de resultados y ajuste de la estrategia",
   "servicespage.modeling.title": "Corporate Finance",
-  "servicespage.modeling.desc": "Nuestra experiencia en finanzas corporativas nos permite apoyar a nuestros clientes en decisiones estratégicas y financieras complejas. Prestamos servicios de asesoría en planificación financiera, valoración de empresas, estructuración de operaciones y análisis estratégico, utilizando herramientas analíticas rigurosas que respaldan la creación de valor sostenible.",
+  "servicespage.modeling.desc": "Nuestra experiencia en modelización financiera proporciona a los clientes herramientas analíticas sofisticadas para la toma de decisiones estratégicas. Desarrollamos modelos sólidos y flexibles que le permiten evaluar escenarios, analizar riesgos y tomar decisiones empresariales bien fundamentadas.",
   "servicespage.modeling.item1": "Business Plans",
   "servicespage.modeling.item1.desc": "Elaboración de business plans completos, incluyendo modelización financiera, proyecciones y análisis de escenarios.",
   "servicespage.modeling.item2": "Valoración",
