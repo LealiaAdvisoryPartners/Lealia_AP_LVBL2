@@ -120,7 +120,7 @@ export const pt = {
   "servicespage.buyside": "M&A Buy-Side",
   "servicespage.sellside": "M&A Sell-Side",
   "servicespage.performance": "Melhoria de Performance",
-  "servicespage.modeling": "Mais Serviços",
+  "servicespage.modeling": "Corporate Finance",
   "servicespage.overview.title": "Os Nossos Serviços",
   "servicespage.overview.p1": "Na Lealia Advisory Partners prestamos serviços de assessoria abrangentes, apoiando empresas na navegação de processos complexos, otimização de desempenho e concretização de objetivos estratégicos de crescimento.",
   "servicespage.overview.p2":  "A nossa atuação cobre todo o espectro de M&A e corporate finance, desde operações de compra e venda até iniciativas de melhoria de performance, modelização financeira e estudos de viabilidade. Combinamos profundo conhecimento setorial com rigor analítico para maximizar o valor criado para os nossos clientes.",

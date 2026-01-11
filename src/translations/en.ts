@@ -120,7 +120,7 @@ export const en = {
   "servicespage.buyside": "M&A Buy-Side",
   "servicespage.sellside": "M&A Sell-Side",
   "servicespage.performance": "Performance Improvement",
-  "servicespage.modeling": "More Services",
+  "servicespage.modeling": "Corporate Finance",
   "servicespage.overview.title": "Our Services",
   "servicespage.overview.p1": "At Lealia Advisory Partners, we offer comprehensive advisory services designed to help businesses navigate complex transactions, optimize performance, and achieve strategic growth objectives.",
   "servicespage.overview.p2": "Our expertise spans the full spectrum of M&A advisory, from buy-side and sell-side transactions to performance improvement, modeling and feasibility studies. We combine deep industry knowledge with rigorous analytical capabilities to deliver optimal returns to our clients.",
