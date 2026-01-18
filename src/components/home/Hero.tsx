@@ -5,8 +5,8 @@ const Hero = () => {
   const { t } = useLanguage();
 
   return (
-    <section className="bg-white min-h-screen flex items-center justify-center relative">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full -mt-16 sm:-mt-20">
+    <section className="bg-white min-h-screen flex items-start sm:items-center justify-center relative pt-20 sm:pt-0">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full sm:-mt-20">
         <div className="flex flex-col items-center space-y-8">
           {/* Logo with Company Name */}
           <img
@@ -24,19 +24,21 @@ const Hero = () => {
       </div>
 
       {/* Contact Information - Positioned at bottom corners */}
-      <div className="absolute bottom-16 sm:bottom-20 left-0 right-0 px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-center sm:justify-between items-center gap-3 sm:gap-0 text-muted-foreground text-sm sm:text-lg md:text-xl font-cinzel">
-        <a
-          href="mailto:GERAL@LEALIAAP.COM"
-          className="hover:text-foreground transition-colors"
-        >
-          GERAL@LEALIAAP.COM
-        </a>
-        <a
-          href="tel:+351935882323"
-          className="hover:text-foreground transition-colors"
-        >
-          +351 935 882 323
-        </a>
+      <div className="absolute bottom-16 sm:bottom-20 left-0 right-0">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-center sm:justify-between items-center gap-3 sm:gap-0 text-muted-foreground text-sm sm:text-lg md:text-xl font-cinzel">
+          <a
+            href="mailto:GERAL@LEALIAAP.COM"
+            className="hover:text-foreground transition-colors"
+          >
+            GERAL@LEALIAAP.COM
+          </a>
+          <a
+            href="tel:+351935882323"
+            className="hover:text-foreground transition-colors"
+          >
+            +351 935 882 323
+          </a>
+        </div>
       </div>
     </section>
   );
