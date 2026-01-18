@@ -37,13 +37,40 @@ const ContactForm = () => {
     },
   });
 
-  const onSubmit = (values: z.infer<typeof formSchema>) => {
-    console.log(values);
-    toast({
-      title: t("contact.success.title"),
-      description: t("contact.success.desc"),
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    const formData = new FormData();
+    formData.append('form-name', 'contact');
+    Object.entries(values).forEach(([key, value]) => {
+      formData.append(key, String(value));
     });
-    form.reset();
+
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData as any),
+      });
+
+      if (response.ok) {
+        toast({
+          title: t("contact.success.title"),
+          description: t("contact.success.desc"),
+        });
+        form.reset();
+      } else {
+        toast({
+          title: "Error",
+          description: "Something went wrong. Please try again.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Network error. Please try again.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
