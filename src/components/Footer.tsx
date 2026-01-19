@@ -14,14 +14,14 @@ const Footer = () => {
           {/* Left: contact icons */}
           <div className="flex space-x-6">
             <a
-              href="mailto:contact@lealiaadvisory.com"
+              href="mailto:info@lealiaap.com"
               className="text-primary-foreground/60 hover:text-accent transition-colors"
               aria-label="Email"
             >
               <Mail className="w-5 h-5" />
             </a>
             <a
-              href="https://linkedin.com/company/lealia-advisory-partners"
+              href="https://www.linkedin.com/company/lealia-advisory-partners/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary-foreground/60 hover:text-accent transition-colors"
@@ -30,7 +30,7 @@ const Footer = () => {
               <Linkedin className="w-5 h-5" />
             </a>
             <a
-              href="tel:+1234567890"
+              href="tel:+351935882323"
               className="text-primary-foreground/60 hover:text-accent transition-colors"
               aria-label="Phone"
             >
