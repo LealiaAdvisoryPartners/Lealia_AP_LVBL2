@@ -7,20 +7,20 @@ import teamMember2 from "@/assets/drp_foto.jpg";
 
 const teamMembers = [
   {
-    id: "john-anderson",
+    id: "ricardo-nascimento-ferreira",
     name: "Ricardo Nascimento Ferreira",
     role: "teampage.role",
     image: teamMember1,
-    email: "j.anderson@lealia.com",
-    linkedin: "https://linkedin.com",
+    email: "ricardo.ferreira@lealiaap.com",
+    linkedin: "https://www.linkedin.com/in/ricardo-a-n-ferreira/",
   },
   {
-    id: "sarah-mitchell",
+    id: "duarte-rocha-pereira",
     name: "Duarte Rocha Pereira",
     role: "teampage.role",
     image: teamMember2,
-    email: "s.mitchell@lealia.com",
-    linkedin: "https://linkedin.com",
+    email: "duarte.pereira@lealiaap.com",
+    linkedin: "https://www.linkedin.com/in/duarte-rocha-pereira/",
   },
 ];
 
