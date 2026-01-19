@@ -82,8 +82,23 @@ const ContactForm = () => {
         transition={{ duration: 0.6 }}
         className="max-w-2xl mx-auto"
       >
-        <div className="text-center mb-12">
+        <div className="text-center mb-8">
           <h2 className="section-title">{t("contact.title")}</h2>
+        </div>
+
+        <div className="text-center mb-4 text-muted-foreground text-sm sm:text-base">
+          <a
+            href="mailto:INFO@LEALIAAP.COM"
+            className="font-medium hover:text-foreground transition-colors"
+          >
+            INFO@LEALIAAP.COM
+          </a>
+          <a
+            href="tel:+351935882323"
+            className="font-medium mt-1 block hover:text-foreground transition-colors"
+          >
+            +351 935 882 323
+          </a>
         </div>
 
         <div className="card-elegant p-8">
