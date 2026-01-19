@@ -80,91 +80,131 @@ const Team = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className={`grid grid-cols-1 sm:grid-cols-3 gap-12 ${!isEven ? "sm:grid-flow-col-dense" : ""}`}
+              className="space-y-10"
             >
-              {/* EVEN (image left) */}
-              {isEven ? (
-                <>
-                  <div className="space-y-6">
-                    <div className="relative overflow-hidden rounded-md shadow-[var(--shadow-elegant)]">
-                      <img src={member.image} alt={member.name} className="w-full aspect-square object-cover" />
+              {/* Mobile layout: name/title -> picture -> email/linkedin -> bio */}
+              <div className="sm:hidden space-y-6">
+                <div>
+                  <h2 className="text-3xl font-heading font-bold text-primary mb-2">{member.name}</h2>
+                  <p className="text-lg font-heading text-accent">{member.role}</p>
+                </div>
+
+                <div className="relative overflow-hidden rounded-md shadow-[var(--shadow-elegant)]">
+                  <img src={member.image} alt={member.name} className="w-full aspect-square object-cover" />
+                </div>
+
+                <div className="flex flex-col gap-4">
+                  <a
+                    href={`mailto:${member.email}`}
+                    className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
+                  >
+                    <Mail className="w-5 h-5 flex-shrink-0" />
+                    <span className="font-body break-all">{member.email}</span>
+                  </a>
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
+                  >
+                    <Linkedin className="w-5 h-5 flex-shrink-0" />
+                    <span className="font-body">{member.linkedinPath}</span>
+                  </a>
+                </div>
+
+                <div className="space-y-4 font-body text-muted-foreground leading-relaxed">
+                  {member.bio.map((paragraph, idx) => (
+                    <p key={idx}>{paragraph}</p>
+                  ))}
+                </div>
+              </div>
+
+              {/* Desktop/tablet layout (sm+): keep existing alternating layout */}
+              <div className={`hidden sm:grid sm:grid-cols-3 gap-12 ${!isEven ? "sm:grid-flow-col-dense" : ""}`}>
+                {/* EVEN (image left) */}
+                {isEven ? (
+                  <>
+                    <div className="space-y-6">
+                      <div className="relative overflow-hidden rounded-md shadow-[var(--shadow-elegant)]">
+                        <img src={member.image} alt={member.name} className="w-full aspect-square object-cover" />
+                      </div>
+
+                      <div className="flex flex-col gap-4">
+                        <a
+                          href={`mailto:${member.email}`}
+                          className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
+                        >
+                          <Mail className="w-5 h-5 flex-shrink-0" />
+                          <span className="font-body break-all">{member.email}</span>
+                        </a>
+                        <a
+                          href={member.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
+                        >
+                          <Linkedin className="w-5 h-5 flex-shrink-0" />
+                          <span className="font-body">{member.linkedinPath}</span>
+                        </a>
+                      </div>
                     </div>
 
-                    <div className="flex flex-col gap-4">
-                      <a
-                        href={`mailto:${member.email}`}
-                        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
-                      >
-                        <Mail className="w-5 h-5 flex-shrink-0" />
-                        <span className="font-body break-all">{member.email}</span>
-                      </a>
-                      <a
-                        href={member.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
-                      >
-                        <Linkedin className="w-5 h-5 flex-shrink-0" />
-                        <span className="font-body">{member.linkedinPath}</span>
-                      </a>
-                    </div>
-                  </div>
+                    <div className="sm:col-span-2 space-y-6">
+                      <div>
+                        <h2 className="text-3xl font-heading font-bold text-primary mb-2">{member.name}</h2>
+                        <p className="text-lg font-heading text-accent">{member.role}</p>
+                      </div>
 
-                  <div className="sm:col-span-2 space-y-6">
-                    <div>
-                      <h2 className="text-3xl font-heading font-bold text-primary mb-2">{member.name}</h2>
-                      <p className="text-lg font-heading text-accent">{member.role}</p>
+                      <div className="space-y-4 font-body text-muted-foreground leading-relaxed">
+                        {member.bio.map((paragraph, idx) => (
+                          <p key={idx}>{paragraph}</p>
+                        ))}
+                      </div>
                     </div>
+                  </>
+                ) : (
+                  <>
+                    {/* ODD (image right) */}
+                    <div className="sm:col-span-2 space-y-6 order-last sm:order-first">
+                      <div>
+                        <h2 className="text-3xl font-heading font-bold text-primary mb-2">{member.name}</h2>
+                        <p className="text-lg font-heading text-accent">{member.role}</p>
+                      </div>
 
-                    <div className="space-y-4 font-body text-muted-foreground leading-relaxed">
-                      {member.bio.map((paragraph, idx) => (
-                        <p key={idx}>{paragraph}</p>
-                      ))}
-                    </div>
-                  </div>
-                </>
-              ) : (
-                <>
-                  {/* ODD (image right) */}
-                  <div className="sm:col-span-2 space-y-6 order-last sm:order-first">
-                    <div>
-                      <h2 className="text-3xl font-heading font-bold text-primary mb-2">{member.name}</h2>
-                      <p className="text-lg font-heading text-accent">{member.role}</p>
+                      <div className="space-y-4 font-body text-muted-foreground leading-relaxed">
+                        {member.bio.map((paragraph, idx) => (
+                          <p key={idx}>{paragraph}</p>
+                        ))}
+                      </div>
                     </div>
 
-                    <div className="space-y-4 font-body text-muted-foreground leading-relaxed">
-                      {member.bio.map((paragraph, idx) => (
-                        <p key={idx}>{paragraph}</p>
-                      ))}
-                    </div>
-                  </div>
+                    <div className="space-y-6 order-first sm:order-last">
+                      <div className="relative overflow-hidden rounded-md shadow-[var(--shadow-elegant)]">
+                        <img src={member.image} alt={member.name} className="w-full aspect-square object-cover" />
+                      </div>
 
-                  <div className="space-y-6 order-first sm:order-last">
-                    <div className="relative overflow-hidden rounded-md shadow-[var(--shadow-elegant)]">
-                      <img src={member.image} alt={member.name} className="w-full aspect-square object-cover" />
+                      <div className="flex flex-col gap-4">
+                        <a
+                          href={`mailto:${member.email}`}
+                          className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
+                        >
+                          <Mail className="w-5 h-5 flex-shrink-0" />
+                          <span className="font-body break-all">{member.email}</span>
+                        </a>
+                        <a
+                          href={member.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
+                        >
+                          <Linkedin className="w-5 h-5 flex-shrink-0" />
+                          <span className="font-body">{member.linkedinPath}</span>
+                        </a>
+                      </div>
                     </div>
-
-                    <div className="flex flex-col gap-4">
-                      <a
-                        href={`mailto:${member.email}`}
-                        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
-                      >
-                        <Mail className="w-5 h-5 flex-shrink-0" />
-                        <span className="font-body break-all">{member.email}</span>
-                      </a>
-                      <a
-                        href={member.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
-                      >
-                        <Linkedin className="w-5 h-5 flex-shrink-0" />
-                        <span className="font-body">{member.linkedinPath}</span>
-                      </a>
-                    </div>
-                  </div>
-                </>
-              )}
+                  </>
+                )}
+              </div>
             </motion.div>
           </section>
         );
