@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import { Mail, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
-import teamMember1 from "@/assets/ranf_foto.jpeg";
-import teamMember2 from "@/assets/drp_foto.jpg";
+import teamMember1 from "@/assets/Ricardo_cut.jpeg";
+import teamMember2 from "@/assets/Duarte_cut.jpeg";
 import logoCircle from "@/assets/Logo_no_text_zoom_704x704.png";
 
 const Team = () => {

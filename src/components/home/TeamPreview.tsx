@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { Mail, Linkedin, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
-import teamMember1 from "@/assets/ranf_foto.jpeg";
-import teamMember2 from "@/assets/drp_foto.jpg";
+import teamMember1 from "@/assets/Ricardo_cut.jpeg";
+import teamMember2 from "@/assets/Duarte_cut.jpeg";
 
 const teamMembers = [
   {
