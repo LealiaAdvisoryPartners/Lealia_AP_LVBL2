@@ -32,18 +32,48 @@ export const useLanguage = () => {
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const [language, setLanguageState] = useState<Language>(() => {
-    const saved = localStorage.getItem("language");
-    return (saved as Language) || "en";
-  });
+  const [language, setLanguageState] = useState<Language>("en");
+
+  const setLanguage = (lang: Language) => {
+    setLanguageState(lang);
+    
+    // Save to localStorage (your existing behavior)
+    localStorage.setItem("language", lang);
+    
+    // Tell Netlify to override future IP redirects
+    document.cookie = `nf_country=${getNfCountry(lang)}; path=/; max-age=${60 * 60 * 24 * 365}`;
+  };
+
+  // Helper: map lang to Netlify country override
+  const getNfCountry = (lang: Language): string => {
+    if (lang === "pt") return "PT";
+    if (lang === "es") return "ES";
+    return "US"; // en
+  };
+
+  useEffect(() => {
+    // 1. Check localStorage first (user preference)
+    const saved = localStorage.getItem("language") as Language | null;
+    if (saved && (saved === "en" || saved === "pt" || saved === "es")) {
+      setLanguageState(saved);
+      return;
+    }
+
+    // 2. Extract from URL path (/pt/about → "pt")
+    const pathSegments = window.location.pathname.split("/").filter(Boolean);
+    const pathLang = pathSegments[0] as Language | undefined;
+    if (pathLang && (pathLang === "en" || pathLang === "pt" || pathLang === "es")) {
+      setLanguageState(pathLang);
+      return;
+    }
+
+    // 3. Default to en
+    setLanguageState("en");
+  }, []);
 
   useEffect(() => {
     localStorage.setItem("language", language);
   }, [language]);
-
-  const setLanguage = (lang: Language) => {
-    setLanguageState(lang);
-  };
 
   const t = (key: string): string => {
     return translations[language][key as keyof typeof translations.en] || key;

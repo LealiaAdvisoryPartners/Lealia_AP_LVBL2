@@ -19,6 +19,27 @@ const LanguageToggle = () => {
   const activeLang = languages.find((l) => l.code === language);
   const otherLangs = languages.filter((l) => l.code !== language);
 
+  const changeLanguage = (nextLang: "en" | "pt" | "es") => {
+    // Update context (sets localStorage + nf_country cookie)
+    setLanguage(nextLang);
+
+    // Rewrite URL: /pt/about → /en/about
+    const url = new URL(window.location.href);
+    const segments = url.pathname.split("/").filter(Boolean); // ["pt", "about"]
+
+    if (segments.length === 0 || segments[0] === "") {
+      // Root: / → /en
+      url.pathname = `/${nextLang}`;
+    } else {
+      // Replace first segment with new lang
+      segments[0] = nextLang;
+      url.pathname = `/${segments.join("/")}`;
+    }
+
+    // Full reload so all pages pick up new language
+    window.location.href = url.toString();
+  };
+
   return (
     <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild>
@@ -34,8 +55,8 @@ const LanguageToggle = () => {
         {otherLangs.map((lang) => (
           <DropdownMenuItem
             key={lang.code}
-            onClick={() => setLanguage(lang.code as "en" | "pt" | "es")}
-            className="hover:bg-transparent hover:text-accent focus:bg-transparent focus:text-accent"
+            onClick={() => changeLanguage(lang.code as "en" | "pt" | "es")}
+            className="hover:bg-transparent hover:text-accent focus:bg-transparent focus:text-accent cursor-pointer"
           >
             {lang.label}
           </DropdownMenuItem>

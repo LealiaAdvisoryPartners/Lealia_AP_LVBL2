@@ -1,0 +1,8 @@
+# Portuguese: PT, BR, CV (Cabo Verde), AO (Angola), MZ (Mozambique)
+/*   /pt/:splat   302!   Country=PT,BR,CV,AO,MZ
+
+# Spanish: ES (Spain) + key South America countries (AR, CL, CO, PE, VE, MX, BO, PY, UY, EC, CR, GT, SV, HN, NI, PA, DO)
+/*   /es/:splat   302!   Country=ES,AR,CL,CO,PE,VE,MX,BO,PY,UY,EC,CR,GT,SV,HN,NI,PA,DO
+
+# Fallback: everywhere else → English
+/*   /en/:splat   302!
