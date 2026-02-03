@@ -3,28 +3,29 @@ import { Handshake, TrendingUp, Building2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { buildPath } from "@/lib/routing";
 
 const ServicesOverview = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   
   const services = [
     {
       icon: Handshake,
       title: t("services.ma"),
       description: t("services.ma.desc"),
-      link: "/services#buy-side",
+      link: buildPath(language, "/services#buy-side"),
     },
     {
       icon: TrendingUp,
       title: t("services.performance"),
       description: t("services.performance.desc"),
-      link: "/services#performance",
+      link: buildPath(language, "/services#performance"),
     },
     {
       icon: Building2,
       title: t("services.modeling"),
       description: t("services.modeling.desc"),
-      link: "/services#modeling",
+      link: buildPath(language, "/services#modeling"),
     },
   ];
 
@@ -76,7 +77,7 @@ const ServicesOverview = () => {
         transition={{ duration: 0.6, delay: 0.4 }}
         className="text-center"
       >
-        <Link to="/services">
+        <Link to={buildPath(language, "/services")}>
           <Button className="btn-gold">{t("services.cta")}</Button>
         </Link>
       </motion.div>

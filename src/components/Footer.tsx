@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { buildPath } from "@/lib/routing";
 import { Mail, Linkedin, Phone } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <footer className="bg-primary text-primary-foreground">
@@ -45,7 +46,7 @@ const Footer = () => {
 
           {/* Right: privacy link */}
           <Link
-            to="/privacy"
+            to={buildPath(language, "/privacy")}
             className="text-sm text-primary-foreground/60 hover:text-accent transition-colors"
           >
             {t("footer.privacy")}

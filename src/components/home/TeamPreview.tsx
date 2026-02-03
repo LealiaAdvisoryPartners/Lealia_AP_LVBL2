@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Mail, Linkedin, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { buildPath } from "@/lib/routing";
 import teamMember1 from "@/assets/Ricardo_cut.jpeg";
 import teamMember2 from "@/assets/Duarte_cut.jpeg";
 
@@ -25,7 +26,7 @@ const teamMembers = [
 ];
 
 const TeamPreview = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   
   return (
     <section className="section-container bg-secondary">
@@ -52,7 +53,7 @@ const TeamPreview = () => {
             transition={{ duration: 0.6, delay: index * 0.1 }}
             className="card-elegant p-6"
           >
-            <Link to={`/team#${member.id}`} className="block group">
+            <Link to={`${buildPath(language, "/team")}#${member.id}`} className="block group">
               <div className="relative overflow-hidden rounded-lg mb-4">
                 <img
                   src={member.image}
@@ -90,7 +91,7 @@ const TeamPreview = () => {
       {/* Meet Our Team Link at Bottom */}
       <div className="mt-12 flex justify-center">
         <Link
-          to="/team"
+          to={buildPath(language, "/team")}
           className="inline-flex items-center gap-2 text-primary font-semibold text-lg hover:text-primary/70 transition-colors"
         >
           {t("team.cta")} <ArrowRight className="w-5 h-5" />

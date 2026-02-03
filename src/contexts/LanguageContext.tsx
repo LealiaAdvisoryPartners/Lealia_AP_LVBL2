@@ -1,7 +1,9 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { en } from "@/translations/en";
 import { pt } from "@/translations/pt";
 import { es } from "@/translations/es";
+import { getLanguageFromPath } from "@/lib/routing";
 
 type Language = "en" | "pt" | "es";
 
@@ -32,6 +34,7 @@ export const useLanguage = () => {
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
+  const location = useLocation();
   const [language, setLanguageState] = useState<Language>("en");
 
   const setLanguage = (lang: Language) => {
@@ -51,29 +54,22 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({
     return "US"; // en
   };
 
+  // Sync language with URL path changes
   useEffect(() => {
-    // 1. Check localStorage first (user preference)
-    const saved = localStorage.getItem("language") as Language | null;
-    if (saved && (saved === "en" || saved === "pt" || saved === "es")) {
-      setLanguageState(saved);
-      return;
-    }
-
-    // 2. Extract from URL path (/pt/about → "pt")
-    const pathSegments = window.location.pathname.split("/").filter(Boolean);
-    const pathLang = pathSegments[0] as Language | undefined;
-    if (pathLang && (pathLang === "en" || pathLang === "pt" || pathLang === "es")) {
+    const pathLang = getLanguageFromPath(location.pathname);
+    if (pathLang) {
       setLanguageState(pathLang);
-      return;
+      localStorage.setItem("language", pathLang);
+    } else {
+      // If no language in path, check localStorage
+      const saved = localStorage.getItem("language") as Language | null;
+      if (saved && (saved === "en" || saved === "pt" || saved === "es")) {
+        setLanguageState(saved);
+      } else {
+        setLanguageState("en");
+      }
     }
-
-    // 3. Default to en
-    setLanguageState("en");
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("language", language);
-  }, [language]);
+  }, [location.pathname]);
 
   const t = (key: string): string => {
     return translations[language][key as keyof typeof translations.en] || key;

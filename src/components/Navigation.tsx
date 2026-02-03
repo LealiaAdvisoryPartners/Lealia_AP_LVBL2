@@ -5,24 +5,35 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageToggle from "./LanguageToggle";
+import { buildPath, getPathWithoutLanguage } from "@/lib/routing";
 import logoHeader from "@/assets/Logo_text_biggerfont_samesize_2.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
-  const navLinks = [
+  const basePaths = [
     { name: t("nav.home"), path: "/" },
     { name: t("nav.about"), path: "/about" },
     { name: t("nav.services"), path: "/services" },
     { name: t("nav.team"), path: "/team" },
   ];
 
-  const isActive = (path: string) => location.pathname === path;
+  // Build language-prefixed paths
+  const navLinks = basePaths.map((link) => ({
+    ...link,
+    path: buildPath(language, link.path),
+  }));
+
+  const isActive = (path: string) => {
+    const currentPath = getPathWithoutLanguage(location.pathname);
+    const linkPath = getPathWithoutLanguage(path);
+    return currentPath === linkPath || (currentPath === "" && linkPath === "/");
+  };
 
   const scrollToContact = () => {
-    window.location.href = "/#contact";
+    window.location.href = `${buildPath(language, "/")}#contact`;
   };
 
   return (
@@ -30,7 +41,7 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
+          <Link to={buildPath(language, "/")} className="flex items-center">
             <img src={logoHeader} alt="Lealia Advisory Partners" className="h-8 w-auto" />
           </Link>
 

@@ -3,9 +3,10 @@ import { Puzzle, BookOpen, Network, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { buildPath } from "@/lib/routing";
 
 const CoreValues = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   
   const values = [
     {
@@ -82,7 +83,7 @@ const CoreValues = () => {
         transition={{ duration: 0.6, delay: 0.4 }}
         className="text-center mt-12"
       >
-        <Link to="/about">
+        <Link to={buildPath(language, "/about")}>
           <Button className="btn-gold">{t("values.cta")}</Button>
         </Link>
       </motion.div>

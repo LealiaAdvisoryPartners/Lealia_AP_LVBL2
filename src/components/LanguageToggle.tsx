@@ -1,4 +1,5 @@
 import { ChevronDown } from "lucide-react";
+import { useNavigate, useLocation } from "react-router-dom";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -6,9 +7,12 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { buildPath, getPathWithoutLanguage } from "@/lib/routing";
 
 const LanguageToggle = () => {
   const { language, setLanguage } = useLanguage();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const languages = [
     { code: "en", label: "EN" },
@@ -23,21 +27,14 @@ const LanguageToggle = () => {
     // Update context (sets localStorage + nf_country cookie)
     setLanguage(nextLang);
 
-    // Rewrite URL: /pt/about → /en/about
-    const url = new URL(window.location.href);
-    const segments = url.pathname.split("/").filter(Boolean); // ["pt", "about"]
-
-    if (segments.length === 0 || segments[0] === "") {
-      // Root: / → /en
-      url.pathname = `/${nextLang}`;
-    } else {
-      // Replace first segment with new lang
-      segments[0] = nextLang;
-      url.pathname = `/${segments.join("/")}`;
-    }
-
-    // Full reload so all pages pick up new language
-    window.location.href = url.toString();
+    // Get current path without language prefix
+    const currentPath = getPathWithoutLanguage(location.pathname);
+    
+    // Build new path with new language
+    const newPath = buildPath(nextLang, currentPath);
+    
+    // Navigate using React Router (no page reload)
+    navigate(newPath, { replace: true });
   };
 
   return (

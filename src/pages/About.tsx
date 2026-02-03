@@ -7,11 +7,12 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { buildPath } from "@/lib/routing";
 import aboutStory from "@/assets/about-story.jpg";
 import logoCircle from "@/assets/Logo_no_text_zoom_704x704.png";
 
 const About = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   // State to track if viewport is desktop size
   const [isDesktop, setIsDesktop] = useState(false);
@@ -150,7 +151,7 @@ const About = () => {
             className="text-center mt-12"
           >
             <a
-              href="/services"
+              href={buildPath(language, "/services")}
               className="inline-flex items-center text-primary font-semibold text-lg hover:text-accent transition-colors"
             >
               {t("about.servicesLink")}
