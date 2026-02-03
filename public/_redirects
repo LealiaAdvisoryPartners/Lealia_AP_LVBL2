@@ -1,3 +1,21 @@
+# Domain redirects - redirect specific domains to lealiaap.com with language prefix
+# Spanish domains (.es) → lealiaap.com/es
+https://lealia.es/* https://www.lealiaap.com/es/:splat 301!
+https://www.lealia.es/* https://www.lealiaap.com/es/:splat 301!
+https://lealiaap.es/* https://www.lealiaap.com/es/:splat 301!
+https://www.lealiaap.es/* https://www.lealiaap.com/es/:splat 301!
+
+# Portuguese domains (.pt) → lealiaap.com/pt
+https://lealia.pt/* https://www.lealiaap.com/pt/:splat 301!
+https://www.lealia.pt/* https://www.lealiaap.com/pt/:splat 301!
+https://lealiaap.pt/* https://www.lealiaap.com/pt/:splat 301!
+https://www.lealiaap.pt/* https://www.lealiaap.com/pt/:splat 301!
+https://lealia-ap.pt/* https://www.lealiaap.com/pt/:splat 301!
+https://www.lealia-ap.pt/* https://www.lealiaap.com/pt/:splat 301!
+https://lealiaadvisorypartners.pt/* https://www.lealiaap.com/pt/:splat 301!
+https://www.lealiaadvisorypartners.pt/* https://www.lealiaap.com/pt/:splat 301!
+
+# Country-based language redirects for .com domain (and other domains not listed above)
 # Portuguese: PT, BR, CV (Cabo Verde), AO (Angola), MZ (Mozambique)
 /*   /pt/:splat   302!   Country=PT,BR,CV,AO,MZ
 
