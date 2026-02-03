@@ -24,3 +24,4 @@ https://www.lealiaadvisorypartners.pt/* https://www.lealiaap.com/pt/:splat 301!
 
 # Fallback: everywhere else → English
 /*   /en/:splat   302!
+
