@@ -28,6 +28,11 @@ https://www.lealiaadvisorypartners.pt/* https://www.lealiaap.com/pt/:splat 301!
 /*.svg     /:splat         200
 /*.woff    /:splat         200
 /*.woff2   /:splat         200
+# Pass-through for already language-prefixed paths (must come BEFORE geo-redirects)
+# This prevents redirect loops like /es -> /es/es
+/en/*    /index.html   200
+/pt/*    /index.html   200
+/es/*    /index.html   200
 
 # Portuguese: PT, BR, CV (Cabo Verde), AO (Angola), MZ (Mozambique)
 /*   /pt/:splat   302!   Country=PT,BR,CV,AO,MZ
@@ -38,9 +43,5 @@ https://www.lealiaadvisorypartners.pt/* https://www.lealiaap.com/pt/:splat 301!
 # Fallback: everywhere else → English
 /*   /en/:splat   302!
 
-# SPA fallback - must be last: serve index.html for all routes (let React Router handle routing)
-# This ensures the React app loads even after redirects
-/en/*     /index.html   200
-/pt/*     /index.html   200
-/es/*     /index.html   200
+# SPA fallback - must be last: serve index.html for all other routes
 /*        /index.html   200
