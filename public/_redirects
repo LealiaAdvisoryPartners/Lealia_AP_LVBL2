@@ -16,6 +16,19 @@ https://lealiaadvisorypartners.pt/* https://www.lealiaap.com/pt/:splat 301!
 https://www.lealiaadvisorypartners.pt/* https://www.lealiaap.com/pt/:splat 301!
 
 # Country-based language redirects for .com domain (and other domains not listed above)
+# Exclude assets and API routes from language redirects
+/assets/*  /assets/:splat  200
+/*.js      /:splat         200
+/*.css     /:splat         200
+/*.json    /:splat         200
+/*.ico     /:splat         200
+/*.png     /:splat         200
+/*.jpg     /:splat         200
+/*.jpeg    /:splat         200
+/*.svg     /:splat         200
+/*.woff    /:splat         200
+/*.woff2   /:splat         200
+
 # Portuguese: PT, BR, CV (Cabo Verde), AO (Angola), MZ (Mozambique)
 /*   /pt/:splat   302!   Country=PT,BR,CV,AO,MZ
 
@@ -25,3 +38,9 @@ https://www.lealiaadvisorypartners.pt/* https://www.lealiaap.com/pt/:splat 301!
 # Fallback: everywhere else → English
 /*   /en/:splat   302!
 
+# SPA fallback - must be last: serve index.html for all routes (let React Router handle routing)
+# This ensures the React app loads even after redirects
+/en/*     /index.html   200
+/pt/*     /index.html   200
+/es/*     /index.html   200
+/*        /index.html   200
