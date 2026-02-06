@@ -1,4 +1,16 @@
 export const pt = {
+  // SEO
+  "seo.home.title": "Lealia Advisory Partners | Assessoria M&A e Consultoria Estratégica",
+  "seo.home.description": "Assessoria financeira independente para PMEs e lower mid-market na Península Ibérica. M&A buy-side e sell-side, melhoria de performance e corporate finance.",
+  "seo.about.title": "Sobre Nós | Lealia Advisory Partners",
+  "seo.about.description": "Conheça a Lealia Advisory Partners — assessoria financeira independente especializada em M&A e corporate finance para PMEs no mercado ibérico.",
+  "seo.services.title": "Serviços | Lealia Advisory Partners",
+  "seo.services.description": "Assessoria M&A buy-side e sell-side, melhoria de performance e corporate finance para PMEs e empresas do lower mid-market na Península Ibérica.",
+  "seo.team.title": "Equipa | Lealia Advisory Partners",
+  "seo.team.description": "Conheça os Managing Partners da Lealia Advisory Partners — profissionais experientes em M&A com mais de 30 transações na Europa.",
+  "seo.privacy.title": "Política de Privacidade | Lealia Advisory Partners",
+  "seo.privacy.description": "Política de privacidade da Lealia Advisory Partners — como recolhemos, utilizamos e protegemos os seus dados pessoais.",
+
   // Navegação
   "nav.home": "Início",
   "nav.about": "Sobre",

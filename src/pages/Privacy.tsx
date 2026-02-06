@@ -1,10 +1,17 @@
 import { useLanguage } from "@/contexts/LanguageContext";
+import SEOHead, { pageMeta } from "@/components/SEOHead";
 
 const Privacy = () => {
   const { t } = useLanguage();
 
   return (
-    <div className="min-h-screen">
+    <>
+      <SEOHead
+        titleKey={pageMeta.privacy.titleKey}
+        descriptionKey={pageMeta.privacy.descriptionKey}
+        path="privacy"
+      />
+      <div className="min-h-screen">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <h1 className="text-4xl md:text-5xl font-heading font-semibold text-primary mb-8">
           {t("privacy.title")}
@@ -85,7 +92,8 @@ const Privacy = () => {
           </section>
         </div>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 
