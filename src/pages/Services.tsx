@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import SEOHead, { pageMeta } from "@/components/SEOHead";
 import logoCircle from "@/assets/Logo_no_text_zoom_704x704.png";
 import { ServicesSidebar } from "@/components/services/ServicesSidebar";
 import { ServicesOverview } from "@/components/services/ServicesOverview";
@@ -63,7 +64,11 @@ const Services = () => {
 
   return (
     <>
-      {/* Decorative Logo only on desktop */}
+      <SEOHead
+        titleKey={pageMeta.services.titleKey}
+        descriptionKey={pageMeta.services.descriptionKey}
+        path="services"
+      />
       {isDesktop && (
         <motion.div
           initial={{ opacity: 0, scale: 0.9, y: -20 }}
