@@ -22,11 +22,11 @@ const Footer = () => {
               <Mail className="w-5 h-5" />
             </a>
             <a
-              href="https://www.linkedin.com/company/lealia-advisory-partners/"
+              href="https://www.linkedin.com/company/lealia-ap/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary-foreground/60 hover:text-accent transition-colors"
-              aria-label="LinkedIn"
+              aria-label="In"
             >
               <Linkedin className="w-5 h-5" />
             </a>
